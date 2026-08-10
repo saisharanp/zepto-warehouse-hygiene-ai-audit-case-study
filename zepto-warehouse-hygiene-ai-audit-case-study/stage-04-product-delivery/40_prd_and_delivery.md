@@ -230,6 +230,17 @@ Cost per verified-control store-day
 
 The budget must separate one-time build, fixed platform, manager time, QA review, physical-audit allocation, remediation reserve, privacy/security, and incident capacity. Replace all planning placeholders with Zepto Finance/Procurement inputs before scale approval.
 
+### AI cost per scan — product planning input
+
+The reference cost model assumes a 15-minute walkthrough sampled at 1 FPS and 1,000 structured output tokens:
+
+| Mode | AI inference estimate / scan | Product policy |
+|---|---:|---|
+| Gemini 2.5 Flash-Lite, low-resolution screening | **₹0.91** | Default screening path in the cost model |
+| Gemini 2.5 Flash, default-resolution escalation | **₹8.04** | Use only when evidence quality or finding complexity warrants it |
+
+These figures cover model inference only. They exclude manager time, QA review, retries, mobile data, storage, platform, privacy/security, remediation, and independent physical audits. The reference total is approximately **₹60.35 per scan before physical-audit allocation** and **₹252.66 per scan with the illustrative audit allocation**. The implementation must meter actual input/output tokens, retries, fallback rate, and media volume; no scale approval should use the AI line as a proxy for total check cost. See the [Stage 00 cost model](../stage-00-research-setup/05_cost_model_and_unit_economics.md).
+
 ## Release-readiness checklist
 
 | Gate | Required evidence | Owner |

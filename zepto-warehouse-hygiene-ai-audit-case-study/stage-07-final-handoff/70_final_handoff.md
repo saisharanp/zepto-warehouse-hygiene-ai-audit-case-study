@@ -27,6 +27,10 @@ The system should rebuild trust through frequent, traceable, independently chall
 
 Safety, evidence integrity, privacy, workload capacity, and cost are joint gates. Cost optimisation cannot weaken the critical false-pass or human-oversight controls.
 
+## AI cost readout
+
+The reference implementation estimates AI inference at **₹0.91 per 15-minute low-resolution screening scan** or **₹8.04 per default-resolution escalation scan**. These are planning estimates from public tariff and token assumptions, not Zepto’s actual contracted costs. The broader reference check cost is approximately **₹60.35 before independent-audit allocation** and **₹252.66 with the illustrative audit allocation**. Scale approval must use metered usage and Zepto Finance/Procurement inputs.
+
 ## What is known
 
 - July 2026 reports describe multiple hygiene findings at specific Hyderabad Zepto locations.

@@ -60,6 +60,7 @@ The launch gate should require positive capacity headroom for normal and risk-tr
 | Operations capacity | Manager, QA, remediation, support, and incident capacity model | Operations |
 | Privacy and labour | Notice, retention/deletion proof, access roles, incident path | Privacy / Legal |
 | Economics | Actual ₹ inputs, pilot run-rate, audit allocation, and stop-cost | Finance / Product |
+| AI cost metering | Token usage, resolution mix, retries, fallback rate, and ₹ cost per scan | ML / Finance |
 | Training | Manager, reviewer, support, and escalation training completion | Operations |
 | Rollback | Automation pause, evidence preservation, affected-scope review, re-entry criteria | Incident response |
 

@@ -44,6 +44,17 @@ I recommend a **Verified Hygiene Check** workflow:
 
 This should be positioned as a **control and trust system**, not a regulatory certificate. AI can make the control loop faster and more consistent; it cannot remove the need for human judgment, regulatory inspections, physical sampling, or sensor data.
 
+### AI cost per scan — ₹ planning model
+
+Using the reference 15-minute walkthrough and public Gemini tariff assumptions, AI inference is estimated at:
+
+| AI mode | Reference AI inference cost / scan | Intended use |
+|---|---:|---|
+| Gemini 2.5 Flash-Lite, low-resolution screening | **₹0.91** | Default first-pass triage |
+| Gemini 2.5 Flash, default-resolution escalation | **₹8.04** | Higher-detail review when needed |
+
+These are AI inference costs only—not Zepto’s actual contracted rate or the total cost of a hygiene check. The reference model estimates approximately **₹60.35 per scan before independent physical-audit allocation** and **₹252.66 per scan with the illustrative audit allocation** after manager time, QA review, exception reserve, storage, connectivity, tags, infrastructure, and audit costs. Replace the planning inputs with Zepto Finance/Procurement and usage-log data before approval. See the [Stage 00 cost model](stage-00-research-setup/05_cost_model_and_unit_economics.md).
+
 ## What is known vs. what is proposed
 
 | Type | Statement |

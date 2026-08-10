@@ -75,6 +75,10 @@ AI recommends workflow state; it is not the final regulatory authority.
 
 During offline evaluation, shadow mode, and the initial human-gated pilot, **Pass** is only an AI recommendation presented to an authorised reviewer. No autonomous release or customer-facing trust claim is enabled. Narrow low-risk automation is a later gate, not an MVP assumption.
 
+## Cost implication
+
+AI inference is intentionally a small part of the control cost. Under the reference 15-minute scan, low-resolution Gemini 2.5 Flash-Lite screening is estimated at **₹0.91 per scan**; default-resolution Gemini 2.5 Flash escalation is estimated at **₹8.04 per scan**. The product decision must use the full cost model—including manager time, QA, remediation, infrastructure, and independent physical audits—not AI cost alone.
+
 ## MVP checklist
 
 | Control | Evidence | Severity |
