@@ -10,6 +10,7 @@
 ## Stage map
 
 - [Stage 00 — Research setup](stage-00-research-setup/00_research_brief.md)
+- [Cross-stage cost model](stage-00-research-setup/05_cost_model_and_unit_economics.md)
 - [Stage 01 — Discovery](stage-01-discovery/10_discovery_synthesis.md)
 - [Stage 02 — Define and prioritize](stage-02-define-prioritize/20_problem_and_opportunity.md)
 - [Stage 03 — Solution design](stage-03-solution-design/30_verified_hygiene_check.md)

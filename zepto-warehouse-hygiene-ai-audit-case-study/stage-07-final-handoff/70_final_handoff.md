@@ -29,6 +29,7 @@ The system should rebuild trust through frequent, traceable, independently chall
 | Stage | Artifact |
 |---|---|
 | 00 Research setup | [Research brief](../stage-00-research-setup/00_research_brief.md) |
+| Cross-stage economics | [Cost model and unit economics](../stage-00-research-setup/05_cost_model_and_unit_economics.md) |
 | 01 Discovery | [Discovery synthesis](../stage-01-discovery/10_discovery_synthesis.md) |
 | 02 Define and prioritize | [Problem and opportunity](../stage-02-define-prioritize/20_problem_and_opportunity.md) |
 | 03 Solution design | [Verified Hygiene Check](../stage-03-solution-design/30_verified_hygiene_check.md) |
