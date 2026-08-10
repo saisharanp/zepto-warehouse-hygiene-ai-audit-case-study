@@ -13,7 +13,7 @@ This model therefore separates:
 2. **Explicit Zepto finance/operations inputs** that must replace assumptions.
 3. **Illustrative planning scenarios** for deciding whether the approach is economically viable.
 
-Prices are a snapshot, not a quote. Re-run the model at procurement time.
+All decision-facing figures below are shown in Indian rupees. The public vendor tariffs have been translated into ₹ using a rounded RBI reference snapshot for planning; Zepto Finance must replace them with the actual contracted billing rate, taxes, discounts, and free-tier eligibility before approval. Prices are a snapshot, not a quote. Re-run the model at procurement time.
 
 ## Reference implementation assumptions
 
@@ -27,7 +27,7 @@ Prices are a snapshot, not a quote. Re-run the model at procurement time.
 | Evidence upload | 100 MB per scan | Engineering assumption; measure after compression tests |
 | Raw-media retention | 30 days | Privacy/policy assumption |
 | Checks per warehouse | 2/week ≈ 8/month | Pilot assumption |
-| Currency conversion | ₹96.25/USD | Rounded reference snapshot from RBI public exchange-rate display; not a locked FX rate |
+| Rupee conversion basis | Public vendor tariffs translated into ₹ | Rounded RBI reference snapshot used for planning; replace with Zepto’s contracted billing rate |
 | Manager loaded cost | ₹200/hour | Zepto Finance input placeholder |
 | QA review sample | 10% of scans, 5 minutes each | Pilot assumption |
 | QA loaded cost | ₹400/hour | Zepto Finance input placeholder |
@@ -38,16 +38,16 @@ Prices are a snapshot, not a quote. Re-run the model at procurement time.
 
 ### AI inference
 
-Google’s current Gemini API pricing lists Gemini 2.5 Flash-Lite at **$0.10 per 1M input tokens** for text/image/video and **$0.40 per 1M output tokens**. Gemini 2.5 Flash is listed at **$0.30 per 1M input tokens** and **$2.50 per 1M output tokens**. [Gemini API pricing](https://ai.google.dev/gemini-api/docs/pricing)
+Google’s current Gemini API pricing translates to approximately **₹9.63 per 1M input tokens** and **₹38.50 per 1M output tokens** for Gemini 2.5 Flash-Lite. Gemini 2.5 Flash translates to approximately **₹28.88 per 1M input tokens** and **₹240.63 per 1M output tokens**. [Gemini API pricing](https://ai.google.dev/gemini-api/docs/pricing)
 
 Google’s video documentation states that low-resolution video is approximately **100 tokens/second**, while default-resolution video is approximately **300 tokens/second**. It also recommends checking actual usage through the API response. [Gemini video understanding](https://ai.google.dev/gemini-api/docs/video-understanding), [Gemini token counting](https://ai.google.dev/gemini-api/docs/tokens)
 
 ### Storage, notifications, and backend
 
 - Firebase Cloud Messaging is listed as a no-cost product. [Firebase pricing](https://firebase.google.com/pricing)
-- Firebase Storage’s listed default-bucket example is **$0.026/GB-month** after the applicable no-cost allowance, with upload/download request charges that are negligible at one object per scan but must still be metered. [Firebase pricing](https://firebase.google.com/pricing)
-- Cloud Run request-based billing lists **$0.000024/vCPU-second**, **$0.0000025/GiB-second**, and **$0.40 per 1M requests** at the default Tier 1 rate; Mumbai is included in Google’s Tier 1 region list. [Cloud Run pricing](https://cloud.google.com/run/pricing)
-- For conversion only, this model uses a rounded **₹96.25/USD** reference from the RBI public exchange-rate display. Finance should replace it with the actual billing/treasury rate. [RBI exchange-rate archive](https://www.rbi.org.in/scripts/ReferenceRateArchive.aspx)
+- Firebase Storage’s listed default-bucket example translates to approximately **₹2.50/GB-month** after the applicable no-cost allowance, with upload/download request charges that are negligible at one object per scan but must still be metered. [Firebase pricing](https://firebase.google.com/pricing)
+- Cloud Run request-based billing translates to approximately **₹0.00231/vCPU-second**, **₹0.00024/GiB-second**, and **₹38.50 per 1M requests** at the default Tier 1 rate; Mumbai is included in Google’s Tier 1 region list. [Cloud Run pricing](https://cloud.google.com/run/pricing)
+- The rupee translations use a rounded reference snapshot from the [RBI exchange-rate archive](https://www.rbi.org.in/scripts/ReferenceRateArchive.aspx). Finance should replace them with the actual billing/treasury rate before procurement.
 
 ## Per-scan calculation
 
@@ -57,18 +57,18 @@ Google’s video documentation states that low-resolution video is approximately
 
 ```text
 Input tokens = 15 min × 60 sec × 100 tokens/sec = 90,000
-Input cost   = 90,000 / 1,000,000 × $0.10 = $0.0090
-Output cost  = 1,000 / 1,000,000 × $0.40 = $0.0004
-AI total     = $0.0094 ≈ ₹0.90 per scan
+Input cost   = 90,000 / 1,000,000 × ₹9.63 = ₹0.87
+Output cost  = 1,000 / 1,000,000 × ₹38.50 = ₹0.04
+AI total     = ₹0.91 per scan
 ```
 
 **Default-resolution Gemini 2.5 Flash pass**
 
 ```text
 Input tokens = 15 min × 60 sec × 300 tokens/sec = 270,000
-Input cost   = 270,000 / 1,000,000 × $0.30 = $0.0810
-Output cost  = 1,000 / 1,000,000 × $2.50 = $0.0025
-AI total     = $0.0835 ≈ ₹8.04 per scan
+Input cost   = 270,000 / 1,000,000 × ₹28.88 = ₹7.80
+Output cost  = 1,000 / 1,000,000 × ₹240.63 = ₹0.24
+AI total     = ₹8.04 per scan
 ```
 
 The model must verify actual token usage. A 10% high-resolution or premium-human-review fallback would increase average AI cost; for example, using Gemini 2.5 Pro on 10% of default-resolution scans adds roughly ₹3–₹4 per average scan under the prices above. This is an estimate, not a measured result.
@@ -77,13 +77,13 @@ The model must verify actual token usage. A 10% high-resolution or premium-human
 
 | Component | Calculation | Reference cost / scan |
 |---|---|---:|
-| AI screening | Low-resolution Flash-Lite scenario above | ₹0.90 |
-| Evidence storage | 0.1 GB × $0.026/GB-month × ₹96.25/USD | ₹0.25 for 30-day storage |
+| AI screening | Low-resolution Flash-Lite scenario above | ₹0.91 |
+| Evidence storage | 0.1 GB × ₹2.50/GB-month | ₹0.25 for 30-day storage |
 | Cloud Run orchestration | 1 vCPU + 0.5 GiB for 60 seconds, two requests, before free tier | ≈₹0.15 |
 | Push notification | FCM | ₹0 |
 | Mobile data | 0.1 GB × Zepto’s contracted ₹/GB | **Input required**; at ₹20/GB, ₹2.00 |
 | QR/NFC tag amortisation | ₹200 ÷ 24 months ÷ 8 monthly scans | ≈₹1.04 |
-| **Digital subtotal with ₹20/GB data scenario** | — | **≈₹4.34** |
+| **Digital subtotal with ₹20/GB data scenario** | — | **≈₹4.35** |
 
 The digital subtotal is not the total cost of a check. It excludes people, physical audits, support, platform fixed costs, and exception handling.
 
@@ -94,8 +94,8 @@ The digital subtotal is not the total cost of a check. It excludes people, physi
 | Manager capture time | 15/60 hour × ₹200/hour | ₹50.00 |
 | QA sample review | 10% × 5/60 hour × ₹400/hour | ₹3.33 |
 | Critical-exception reserve | 2% × 20/60 hour × ₹400/hour | ₹2.67 |
-| Digital subtotal | From table above | ₹4.34 |
-| **Run-rate before independent physical audit** | — | **≈₹60.34 per scan** |
+| Digital subtotal | From table above | ₹4.35 |
+| **Run-rate before independent physical audit** | — | **≈₹60.35 per scan** |
 
 ### 4. Independent audit allocation
 
@@ -108,7 +108,7 @@ Physical-audit allocation = ₹5,000 / 26 scans ≈ ₹192.31 per scan
 Therefore:
 
 ```text
-Fully loaded operating cost = ₹60.34 + ₹192.31 ≈ ₹252.65 per scan
+Fully loaded operating cost = ₹60.35 + ₹192.31 ≈ ₹252.66 per scan
 ```
 
 The physical-audit line is a procurement placeholder. It is the most sensitive cost input and must be replaced with Zepto’s actual vendor, travel, sampling, and lab-testing cost.
@@ -198,7 +198,7 @@ Cost per verified-control store-day
 
 **Recommendation:** Approve the reference model for planning, then replace all internal placeholders with Zepto Finance/Procurement inputs before committing to scale.
 
-**Strongest finding:** AI inference is estimated at roughly ₹0.90–₹8.04 per scan using current public Gemini list prices and explicit token assumptions; labour and independent physical audits dominate the reference total.
+**Strongest finding:** AI inference is estimated at roughly ₹0.91–₹8.04 per scan using current public Gemini list prices translated into ₹ and explicit token assumptions; labour and independent physical audits dominate the reference total.
 
 **Open questions:** Actual loaded labour rates, physical-audit quote, media size, cloud contract, and Zepto’s expected store/check volume.
 **Approval request:** Approve collecting these cost inputs before the shadow-mode budget is finalised.
