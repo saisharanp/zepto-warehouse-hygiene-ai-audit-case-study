@@ -68,8 +68,14 @@ Do not publish an unqualified “AI certified” badge. After validation, use co
 - Worker faces, voices, and sensitive layout may be captured.
 - Overly punitive workflows may encourage avoidance or falsification.
 
-## Stage 3 gate
+## Stage 03 decision gate
 
-**Decision:** Proceed to product delivery specification.  
-**Recommendation:** Build the smallest safe workflow: live capture, layered integrity, visible-risk triage, human gating, remediation, and random audit.  
+**Decision:** Proceed to product delivery specification.
+
+**Recommendation:** Build the smallest safe workflow: live capture, layered integrity, visible-risk triage, human gating, remediation, and random audit.
+
+**Evidence:** The design directly addresses inspection gaps and evidence staging while preserving human, physical, and regulatory oversight.
+
 **Open questions:** Exact policy mapping, retention period, device support, and hold/recall authority.
+
+**Approval request:** Approve the Verified Hygiene Check concept for PRD and technical-contract definition, subject to Privacy, Security, and Food Safety review.

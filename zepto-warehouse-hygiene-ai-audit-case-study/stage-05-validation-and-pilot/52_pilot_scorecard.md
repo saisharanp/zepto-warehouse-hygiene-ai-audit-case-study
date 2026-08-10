@@ -1,4 +1,4 @@
-# Stage 5 — Shadow and Pilot Scorecard
+# Stage 05 — Validation and Pilot Scorecard
 
 **Status:** Blank operating template; no results populated  
 **Owner:** Zepto Trust / Food Safety lead, with Product as coordinator

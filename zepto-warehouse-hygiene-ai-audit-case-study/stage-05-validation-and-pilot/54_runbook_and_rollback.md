@@ -1,4 +1,4 @@
-# Stage 5 — Shadow-Mode Runbook and Rollback
+# Stage 05 — Validation and Pilot Runbook and Rollback
 
 ## Before each check window
 

@@ -1,4 +1,4 @@
-# Stage 5 — Offline and Shadow-Mode Validation Protocol
+# Stage 05 — Validation and Pilot Protocol
 
 **Product:** Verified Hygiene Check  
 **Scope:** Zepto dark stores / warehouse operations  
@@ -104,7 +104,7 @@ Advance to a controlled operational pilot only when:
 - Do not use the recordings for worker performance scoring or facial recognition.
 - Maintain a data inventory, access log, deletion job, incident process, and worker notice.
 
-## Stage 5 decision gate
+## Stage 05 decision gate
 
 **Decision:** Proceed to data preparation and shadow-mode setup; do not claim a product pilot or launch.  
 **Recommendation:** Approve the protocol, synthetic replay, and scorecard as the working validation package.  

@@ -1,4 +1,4 @@
-# Stage 5 Approval Gate
+# Stage 05 — Validation and Pilot Approval Gate
 
 ## Decision
 
@@ -6,7 +6,7 @@
 
 ## Recommendation
 
-Approve the validation protocol, synthetic replay cases, scorecard, and rollback runbook as the working Stage 5 package.
+Approve the validation protocol, synthetic replay cases, scorecard, and rollback runbook as the working Stage 05 package.
 
 ## Evidence
 

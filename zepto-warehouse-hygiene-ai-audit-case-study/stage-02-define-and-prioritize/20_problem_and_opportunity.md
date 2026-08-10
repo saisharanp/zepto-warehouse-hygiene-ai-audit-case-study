@@ -43,9 +43,14 @@ Build **Verified Hygiene Check**: a risk-based, in-app live walkthrough that cap
 - Treat GPS metadata as proof by itself.
 - Launch a customer-facing “safe warehouse” badge before independent validation.
 
-## Stage 2 gate
+## Stage 02 decision gate
 
-**Decision:** Proceed to solution design.  
-**Recommendation:** Validate a small, evidence-integrity-first workflow before investing in sensors or a public trust badge.  
-**Evidence:** The opportunity addresses the recurring control categories while preserving physical and regulatory checks.  
-**Rejected alternatives:** Inspection-only, sensors everywhere, and badge-only approaches.
+**Decision:** Proceed to solution design.
+
+**Recommendation:** Validate a small, evidence-integrity-first workflow before investing in sensors or a public trust badge.
+
+**Evidence:** The opportunity addresses the recurring control categories while preserving physical and regulatory checks.
+
+**Open questions:** Which visible controls can be evaluated reliably by phone video, which require sensors or physical sampling, and who owns containment authority?
+
+**Approval request:** Approve Verified Hygiene Check as the selected opportunity and carry the rejected inspection-only, sensors-everywhere, and badge-only alternatives into the decision log.

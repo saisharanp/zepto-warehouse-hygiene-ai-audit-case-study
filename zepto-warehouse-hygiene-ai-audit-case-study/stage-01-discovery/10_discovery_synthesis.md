@@ -33,9 +33,14 @@
 - No internal Zepto response, baseline, or remediation data was available.
 - Video cannot prove microbiological safety or every cold-chain condition.
 
-## Stage 1 gate
+## Stage 01 decision gate
 
-**Decision:** Proceed to define and prioritize.  
-**Recommendation:** Solve the gap between inspections: frequent, verifiable detection connected to containment and remediation.  
-**Evidence:** Repeated July 2026 categories across three reported Hyderabad locations; confidence medium to high depending source.  
-**Open question:** Whether the pattern is regional, licensee-specific, or network-wide.
+**Decision:** Proceed to define and prioritize.
+
+**Recommendation:** Solve the gap between inspections: frequent, verifiable detection connected to containment and remediation.
+
+**Evidence:** Repeated July 2026 categories across three reported Hyderabad locations; confidence medium to high depending source.
+
+**Open questions:** Whether the pattern is regional, licensee-specific, or network-wide, and what Zepto’s internal baseline shows.
+
+**Approval request:** Approve the evidence-backed opportunity framing and move to problem definition and prioritization.

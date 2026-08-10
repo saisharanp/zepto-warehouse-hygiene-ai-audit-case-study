@@ -50,8 +50,16 @@
 - Maintain sensor or physical sampling for controls video cannot prove.
 - Keep a rollback path that disables auto-pass without destroying evidence.
 
-## Stage 6 gate
+## Stage 06 decision gate
 
-**Decision:** Scale only after Stage 5 thresholds pass for the approved period.  
-**Recommendation:** Treat operational compliance, model safety, privacy, and customer outcomes as a joint launch gate.  
+**Decision:** Scale only after Stage 05 thresholds pass for the approved period.
+
+**Recommendation:** Treat operational compliance, model safety, privacy, and customer outcomes as a joint launch gate.
+
+**Evidence:** The launch plan includes completion, integrity, false-pass, remediation, privacy, support, and independent-audit guardrails.
+
+**Open questions:** Which cohort and period will establish the launch baseline, what customer communication is legally approved, and who can stop the rollout?
+
+**Approval request:** Approve launch planning only; authorize rollout after the Stage 05 validation evidence passes and Food Safety, Privacy, Security, Operations, and Product owners sign off.
+
 **Stop condition:** Any unexplained critical false pass, customer-harm signal, material privacy incident, repeated staging pattern, or regulator objection.

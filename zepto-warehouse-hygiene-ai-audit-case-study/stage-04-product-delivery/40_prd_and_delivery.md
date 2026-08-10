@@ -63,8 +63,14 @@ As a support lead, I want complaint and return signals to trigger a risk-based r
 4. Shadow-mode model integration.
 5. Offline evaluation and launch-readiness gate.
 
-## Stage 4 gate
+## Stage 04 decision gate
 
-**Decision:** Proceed to validation and pilot preparation.  
-**Recommendation:** Do not build automatic customer-facing trust claims until VHC-01 through VHC-10 and cross-functional review are complete.  
-**Dependencies:** De-identified media, current SOPs, location/device capabilities, privacy review, and remediation budget.
+**Decision:** Proceed to validation and pilot preparation.
+
+**Recommendation:** Do not build automatic customer-facing trust claims until VHC-01 through VHC-10 and cross-functional review are complete.
+
+**Evidence:** The PRD defines exception paths, evidence integrity, human decision authority, ownership, and release dependencies rather than treating AI output as a safety certificate.
+
+**Open questions:** De-identified media availability, current SOP version, location/device capabilities, privacy basis, remediation budget, and integration ownership.
+
+**Approval request:** Approve the PRD and delivery plan for offline evaluation and shadow-mode preparation, subject to the Stage 05 entry criteria.

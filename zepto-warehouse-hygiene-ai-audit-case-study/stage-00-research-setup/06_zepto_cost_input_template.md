@@ -154,7 +154,7 @@ Before a shadow-mode budget is approved, Finance/Procurement and the accountable
 - a change in model, media duration, retention, or cohort size triggers recalculation;
 - the budget does not depend on an unapproved customer-facing hygiene claim.
 
-## Stage 0.1 cost gate
+## Stage 00 decision gate — cost feasibility
 
 **Decision:** Do not finalise the shadow-mode budget until this template is populated and signed off.
 

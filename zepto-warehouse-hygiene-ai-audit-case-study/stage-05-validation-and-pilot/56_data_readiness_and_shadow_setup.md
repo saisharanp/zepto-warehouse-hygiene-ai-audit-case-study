@@ -1,4 +1,4 @@
-# Stage 05 — Data Readiness and Shadow-Mode Setup
+# Stage 05 — Validation and Pilot Data Readiness and Shadow-Mode Setup
 
 **Status:** Ready for owner input; no live data collection or pilot has been executed
 **Purpose:** Convert the approved validation protocol into an executable four-week shadow-mode setup
@@ -107,7 +107,7 @@ Do not choose only stores that volunteer or already perform well. Record inclusi
 
 ## Exit criteria
 
-Advance to a controlled operational pilot only if the Stage 5 thresholds pass, including:
+Advance to a controlled operational pilot only if the Stage 05 thresholds pass, including:
 
 - ≥95% recall for each critical category;
 - ≤1% critical false-pass rate;
@@ -120,7 +120,7 @@ Advance to a controlled operational pilot only if the Stage 5 thresholds pass, i
 
 If a non-critical threshold misses without a safety incident, continue shadow mode and revise the workflow. If a critical false pass, privacy breach, or customer-harm signal occurs, pause automation and invoke the rollback runbook.
 
-## Stage 5.1 decision gate
+## Stage 05 decision gate
 
 **Decision:** Ready to request data and configure shadow mode; not ready to execute or claim results.
 

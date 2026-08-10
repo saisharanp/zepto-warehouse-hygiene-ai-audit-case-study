@@ -63,9 +63,14 @@ How might Zepto detect and remediate visible warehouse-hygiene failures earlier,
 | Recording captures workers and sensitive layout | Privacy and labour risk | No audio by default, blur, minimisation, retention and access controls |
 | Detection without remediation creates paperwork | No operational improvement | Named owner, hold scope, SLA, budget, re-check |
 
-## Stage 0 gate
+## Stage 00 decision gate
 
-**Decision:** Proceed to discovery synthesis and problem definition.  
-**Recommendation:** Focus on a verified routine virtual check as a control-system opportunity, not an AI certification product.  
-**Open questions:** Zepto’s current cadence, baseline exception rate, inspection media, remediation SLAs, and legal basis for recording.  
-**Approval needed:** Internal Zepto data and cross-functional review before validation.
+**Decision:** Proceed to discovery synthesis and problem definition.
+
+**Recommendation:** Focus on a verified routine virtual check as a control-system opportunity, not an AI certification product.
+
+**Evidence:** July 2026 public reports and FSSAI guidance justify investigating a more frequent, auditable hygiene-control loop; they do not establish Zepto-wide prevalence.
+
+**Open questions:** Zepto’s current cadence, baseline exception rate, inspection media, remediation SLAs, and legal basis for recording.
+
+**Approval request:** Approve discovery synthesis and request internal Zepto data plus cross-functional review before validation.

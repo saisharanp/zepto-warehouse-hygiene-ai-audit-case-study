@@ -1,4 +1,4 @@
-# Cross-Stage Cost Model — Verified Hygiene Check
+# Stage 00 — Research Setup: Cost Model and Unit Economics
 
 **Prepared:** 2026-08-10
 **Status:** Reference implementation economics; not Zepto’s actual invoice or internal budget
@@ -192,7 +192,7 @@ Cost per verified-control store-day
 - Store count, check cadence, manager device policy, and tag procurement quote.
 - Expected lifetime and amortisation policy for the one-time MVP investment.
 
-## Stage 0 cost gate
+## Stage 00 decision gate — cost feasibility
 
 **Decision:** Add cost as a first-class feasibility gate before shadow-mode execution.
 

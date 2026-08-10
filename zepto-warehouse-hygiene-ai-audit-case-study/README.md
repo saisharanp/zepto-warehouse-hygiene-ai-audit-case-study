@@ -13,11 +13,11 @@
 - [Cross-stage cost model](stage-00-research-setup/05_cost_model_and_unit_economics.md)
 - [Cost input template / shadow budget gate](stage-00-research-setup/06_zepto_cost_input_template.md)
 - [Stage 01 — Discovery](stage-01-discovery/10_discovery_synthesis.md)
-- [Stage 02 — Define and prioritize](stage-02-define-prioritize/20_problem_and_opportunity.md)
+- [Stage 02 — Define and prioritize](stage-02-define-and-prioritize/20_problem_and_opportunity.md)
 - [Stage 03 — Solution design](stage-03-solution-design/30_verified_hygiene_check.md)
 - [Stage 04 — Product delivery](stage-04-product-delivery/40_prd_and_delivery.md)
-- [Stage 05 — Validation and pilot](stage-05-validation-pilot/50_validation_protocol.md)
-- [Stage 06 — Launch and scale](stage-06-launch-scale/60_launch_and_scale.md)
+- [Stage 05 — Validation and pilot](stage-05-validation-and-pilot/50_validation_protocol.md)
+- [Stage 06 — Launch and scale](stage-06-launch-and-scale/60_launch_and_scale.md)
 - [Stage 07 — Final handoff](stage-07-final-handoff/70_final_handoff.md)
 
 ## Executive summary
@@ -52,7 +52,7 @@ This should be positioned as a **control and trust system**, not a regulatory ce
 | Proposal | Add routine, location-verified virtual checks with AI triage, human escalation, and random physical audits. |
 | Non-claim | This proposal does not prove that bribery occurred, that all Zepto warehouses have the same issue, or that AI alone can guarantee hygiene. |
 
-## 0. Research setup
+## Stage 00 — Research setup
 
 ### Research question
 
@@ -88,7 +88,7 @@ Public reports are directional. They do not provide the denominator of orders, s
 | [FSSAI hygiene requirements](https://fssai.gov.in/cms/hygiene-requirements.php) | Current guidance | Licensed FBOs must maintain a documented FSMS plan and follow Schedule 4 GMP/GHP requirements for storage and distribution. | High |
 | [FSSAI safe storage and distribution handbook](https://fostacold.fssai.gov.in/fostac/doc/Food%20Safety%20training%20manual%20storage%2C%20transportation%20v2%20-%20June%2014%2C%202017%20with%20checklist.pdf) | Guidance | Controls should identify hazards, monitor controls, and review them periodically across storage and distribution. | High |
 
-## 1. Discovery synthesis
+## Stage 01 — Discovery
 
 ### Evidence-backed problem themes
 
@@ -112,7 +112,7 @@ Public reports are directional. They do not provide the denominator of orders, s
 
 The source set is a small public evidence base centred on one reported facility and one customer complaint. It supports prioritising investigation, not estimating Zepto-wide failure rates. Before build, Zepto should join internal data on expiry write-offs, temperature excursions, pest-control tickets, customer complaints, refunds, and prior inspection outcomes.
 
-## 2. Define and prioritize
+## Stage 02 — Define and prioritize
 
 ### Problem statement
 
@@ -155,7 +155,7 @@ Scores below are assumptions for product selection, not observed business metric
 - Publish a green badge before the control is independently calibrated.
 - Treat GPS metadata as proof of truthfulness by itself.
 
-## 3. Solution design — Verified Hygiene Check
+## Stage 03 — Solution design
 
 ### Core flow
 
@@ -241,7 +241,7 @@ Do not launch with an unqualified “safe warehouse” badge. After the pilot pa
 
 If a critical failure affects customer orders, Zepto should have a batch/zone traceability process, pause affected stock, and communicate proportionately. A refund alone is not a trust repair strategy.
 
-## 4. Product delivery
+## Stage 04 — Product delivery
 
 ### MVP requirements
 
@@ -278,7 +278,7 @@ If a critical failure affects customer orders, Zepto should have a batch/zone tr
 
 A live warehouse recording may capture workers, faces, voices, labels, personal devices, and commercially sensitive layout. Apply purpose limitation, data minimisation, access controls, short retention, automatic redaction, and a clear worker notice. The Digital Personal Data Protection Act requires processing to be tied to a lawful purpose and consent/notice conditions; Legal should confirm the applicable basis and implementation before pilot. [MeitY: DPDP Act 2023](https://www.meity.gov.in/writereaddata/files/Digital%20Personal%20Data%20Protection%20Act%202023.pdf)
 
-## 5. Validation and pilot
+## Stage 05 — Validation and pilot
 
 ### Riskiest assumptions
 
@@ -316,7 +316,7 @@ These are proposed go/no-go thresholds, not achieved results:
 
 Immediately disable auto-pass and revert to human review if there is a critical false pass, a customer harm signal plausibly linked to an unchecked store, material privacy/security leakage, systematic model drift, regulator objection, or repeated evidence-staging pattern. Keep capture only if it remains useful and lawful.
 
-## 6. Launch and scale
+## Stage 06 — Launch and scale
 
 ### Rollout phases
 
@@ -351,7 +351,7 @@ Do not optimise for “green checks.” A system that increases pass rate by mak
 - Monthly: model drift, physical-audit calibration, privacy review, remediation economics.
 - Quarterly: external or independent food-safety audit and customer trust readout.
 
-## 7. Final decision and handoff
+## Stage 07 — Final handoff
 
 ### Recommendation
 
@@ -385,9 +385,9 @@ I reframed a high-emotion hygiene scandal as a systems problem: the customer nee
 
 ## Validation package
 
-- [Offline and shadow-mode validation protocol](stage-05-validation-pilot/50_validation_protocol.md)
-- [Synthetic case replay](stage-05-validation-pilot/51_synthetic_case_replay.csv)
-- [Pilot scorecard](stage-05-validation-pilot/52_pilot_scorecard.md)
-- [Runbook and rollback](stage-05-validation-pilot/54_runbook_and_rollback.md)
-- [Data readiness and shadow setup](stage-05-validation-pilot/56_data_readiness_and_shadow_setup.md)
-- [Stage 5 approval gate](stage-05-validation-pilot/55_stage5_approval_gate.md)
+- [Offline and shadow-mode validation protocol](stage-05-validation-and-pilot/50_validation_protocol.md)
+- [Synthetic case replay](stage-05-validation-and-pilot/51_synthetic_case_replay.csv)
+- [Pilot scorecard](stage-05-validation-and-pilot/52_pilot_scorecard.md)
+- [Runbook and rollback](stage-05-validation-and-pilot/54_runbook_and_rollback.md)
+- [Data readiness and shadow setup](stage-05-validation-and-pilot/56_data_readiness_and_shadow_setup.md)
+- [Validation and pilot approval gate](stage-05-validation-and-pilot/55_validation_and_pilot_approval_gate.md)
