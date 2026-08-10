@@ -10,7 +10,7 @@ Definitions, denominators, sampling logic, and evidence requirements are specifi
 The example design below is illustrative and must be sized after baseline review:
 
 - four-week shadow period;
-- limited volunteer store cohort across more than one layout and operating context;
+- documented mixed store cohort across layouts, risk levels, devices, connectivity, and operating contexts; volunteer participation only where necessary and explicitly labelled as a limitation;
 - two routine checks per week plus risk-triggered checks;
 - matched comparison cohort for operational outcomes where feasible;
 - human reviewer confirms every operational decision during shadow mode.
@@ -20,7 +20,7 @@ The example design below is illustrative and must be sized after baseline review
 | Metric | Definition | Target | Actual | Status | Evidence / owner |
 |---|---|---:|---:|---|---|
 | Critical finding recall | Critical findings detected / critical findings present | ≥95% by category | — | Not run | ML + QA |
-| Critical false-pass rate | Critical cases auto-passed / critical cases evaluated | ≤1% | — | Not run | QA |
+| Critical false-pass rate | Critical cases receiving a no-critical-issue AI recommendation / adjudicated critical cases evaluated | ≤1% | — | Not run | QA |
 | Invalid-session rejection | Invalid gallery/location/device/replay cases rejected or reviewed | 100% in test set | — | Not run | Security |
 | Complete route coverage | Sessions meeting all required zone checkpoints | ≥95% | — | Not run | Product Ops |
 | Suspect-session rate | Sessions flagged for integrity review | <3% with all high-risk reviewed | — | Not run | Security |

@@ -12,6 +12,7 @@
 - Separate model output from the authorised human decision.
 - Treat `unknown`, incomplete, and suspicious sessions as observable outcomes, not missing data.
 - Do not claim complaint reduction without a documented denominator and a baseline or comparison cohort.
+- During shadow mode, measure the counterfactual AI recommendation separately from the human decision; no autonomous pass is enabled.
 
 ## Unit of analysis
 
@@ -29,7 +30,7 @@
 | Metric | Formula | Required segmentation | Decision use |
 |---|---|---|---|
 | Critical finding recall | True critical findings detected / all adjudicated critical findings present | Finding category, layout, device, lighting, store | Must pass per category before any automation |
-| Critical false-pass rate | Critical cases authorised as no-critical-issue / all critical cases evaluated | Finding category, reviewer, store risk | Any unexplained breach pauses automation |
+| Critical false-pass rate | Critical cases receiving a no-critical-issue AI recommendation / all adjudicated critical cases evaluated | Finding category, reviewer, store risk | Any unexplained breach pauses automation |
 | False-fail rate | Non-critical or clean cases incorrectly held / all clean or non-critical cases evaluated | Store, manager, category, lighting | Controls manager burden and operational disruption |
 | Unknown rate | Sessions or findings returned as unknown / sessions or findings evaluated | Category, device, quality, model version | High unknown may require better capture or narrower scope |
 | Route coverage | Required checkpoints completed with acceptable quality / required checkpoints | Zone, store layout, device, network state | Determines whether a session is complete |

@@ -27,7 +27,7 @@ Use the [metric dictionary and sampling plan](53_metric_dictionary_and_sampling_
 | ID | Hypothesis | Test | Pass threshold |
 |---|---|---|---|
 | H1 | The workflow can detect clearly visible critical findings. | Model evaluation on adjudicated holdout set, segmented by finding type. | ≥95% recall for each critical category; no category may be averaged away. |
-| H2 | The system avoids unsafe auto-passes. | Blinded human/physical audit of sessions eligible for auto-pass. | Critical false-pass rate ≤1%. |
+| H2 | The system avoids unsafe pass recommendations. | Blinded human/physical audit of counterfactual sessions that the proposed policy would classify as no-critical-issue. | Critical false-pass rate ≤1%. |
 | H3 | A scan can prove facility/session integrity better than self-attestation. | Replay, gallery-upload, mock-location, QR/NFC mismatch, device-integrity, and interrupted-session tests. | 100% of deliberately invalid test cases rejected or routed to human review. |
 | H4 | Managers can complete a full route without material operational burden. | Task-based shadow study with observed completion time and error logging. | Median completion time ≤15 minutes; ≥90% of due sessions within SLA. |
 | H5 | Findings lead to remediation. | Shadow-to-operations replay: assign owner, SLA, hold scope, and re-check. | ≥95% of critical remediation tasks closed within SLA during pilot. |
@@ -63,7 +63,9 @@ The model must be allowed to return **unknown**. Unknown is safer than a forced 
 
 ### C. Shadow mode
 
-For a proposed four-week period, managers complete real scans in a limited volunteer cohort. AI produces findings, but the QA reviewer makes every operational decision. A separate reviewer samples sessions for route coverage, integrity, and false negatives. Physical spot checks are unannounced to the store team where legally and operationally appropriate.
+For a proposed four-week period, managers complete real scans in a documented mixed cohort covering store layout, risk level, device, connectivity, manager tenure, and operating context. Volunteer participation may be used only where necessary and must be recorded as a sampling limitation. AI produces findings, but the QA reviewer makes every operational decision. A separate reviewer samples sessions for route coverage, integrity, and false negatives. Physical spot checks are unannounced to the store team where legally and operationally appropriate.
+
+No autonomous pass is enabled in shadow mode. Evaluate the counterfactual AI recommendation against adjudicated findings so the critical false-pass gate remains measurable without turning the pilot into an unapproved safety decision system.
 
 Shadow mode must log:
 

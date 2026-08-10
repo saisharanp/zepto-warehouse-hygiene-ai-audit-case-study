@@ -73,6 +73,8 @@ GPS or geotagging alone cannot prove that a scan is genuine. The layered bundle 
 
 AI recommends workflow state; it is not the final regulatory authority.
 
+During offline evaluation, shadow mode, and the initial human-gated pilot, **Pass** is only an AI recommendation presented to an authorised reviewer. No autonomous release or customer-facing trust claim is enabled. Narrow low-risk automation is a later gate, not an MVP assumption.
+
 ## MVP checklist
 
 | Control | Evidence | Severity |

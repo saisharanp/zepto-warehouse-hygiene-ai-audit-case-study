@@ -12,6 +12,21 @@ The recommended response is **Verified Hygiene Check**: a risk-based live phone 
 
 The system should rebuild trust through frequent, traceable, independently challenged controls—not through a marketing claim. It must be funded alongside cleaning, pest control, shelving, cold-chain instrumentation, FEFO segregation, training, and remediation budgets.
 
+## Agreed product position
+
+| Decision | Position carried into implementation |
+|---|---|
+| Evidence claim | July 2026 reports support investigation of a credible, location-specific problem; they do not establish Zepto-wide prevalence or root cause. |
+| Product boundary | Zepto dark-store/warehouse operations; the MVP covers visible, auditable controls and routes non-visual risks to records, sensors, sampling, or physical inspection. |
+| AI authority | AI triages evidence and recommends `pass`, `fail/hold`, or `unknown`; an authorised human owns hold/release. |
+| Integrity claim | GPS, QR/NFC, device checks, route prompts, hashes, and random audits reduce fraud opportunity; none proves bribery or staging is impossible. |
+| Pilot design | Offline evaluation, four-week shadow mode, then an eight-week human-gated controlled pilot only if pre-declared safety gates pass. |
+| Economic gate | Use cost per verified-control store-day; all Zepto-internal labour, audit, cloud, remediation, and build inputs remain `TBD` until sourced. |
+| Customer communication | Keep verification internal through validation and human-gated pilot; defer any restrained customer view until independent validation. |
+| Design artifact | Existing editable SVG wireframes are the working low-fidelity source for now; they are not a Figma file or production UI. |
+
+Safety, evidence integrity, privacy, workload capacity, and cost are joint gates. Cost optimisation cannot weaken the critical false-pass or human-oversight controls.
+
 ## What is known
 
 - July 2026 reports describe multiple hygiene findings at specific Hyderabad Zepto locations.
@@ -47,7 +62,7 @@ I reframed a high-emotion hygiene problem as a systems problem: customers need c
 
 **Recommendation:** Approve collection of de-identified inspection media, current SOPs, internal complaint/temperature/expiry data, and Privacy/Legal/QA review before controlled operational testing.
 
-**Evidence:** All eight product-case-study stages have reviewable artifacts, explicit assumptions, decision gates, validation thresholds, rollback criteria, and a final product recommendation.
+**Evidence:** Stages 00–07 have reviewable artifacts, explicit assumptions, decision gates, validation thresholds, rollback criteria, and a final product recommendation. The case study does not claim Zepto implementation, live model performance, actual cost savings, or customer-trust improvement.
 
 **Open questions:** Whether Zepto can provide the required data and owners, whether the model passes the pre-declared safety thresholds, and whether the operating economics support the workflow.
 

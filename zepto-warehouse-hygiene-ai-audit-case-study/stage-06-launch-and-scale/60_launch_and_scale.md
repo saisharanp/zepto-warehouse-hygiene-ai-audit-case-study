@@ -7,7 +7,7 @@
 1. **Readiness:** Approve checklist, retention, training, incident playbook, and thresholds.
 2. **Shadow mode:** AI observes; humans decide.
 3. **Human-gated operations:** AI recommends hold/pass; reviewer confirms every decision.
-4. **Narrow automation:** Auto-pass only for low-risk, high-confidence, complete sessions; critical/ambiguous cases remain human-gated.
+4. **Narrow automation:** Consider auto-pass only for a separately approved low-risk, high-confidence, complete-session subset after the safety, integrity, workload, privacy, and physical-audit gates pass; critical/ambiguous cases remain human-gated.
 5. **Scale:** Add stores only after four consecutive weeks of threshold compliance and acceptable random physical-audit results.
 
 ## North Star
@@ -31,6 +31,16 @@ Capacity headroom = staffed capacity − required capacity
 ```
 
 The launch gate should require positive capacity headroom for normal and risk-triggered peaks, a named overflow owner, and a tested incident contact path. If QA or remediation queues exceed SLA, the system should reduce automation or pause new rollout rather than silently accumulate unresolved work.
+
+## Authority and stop rights
+
+| Role | Accountable decision | Stop authority |
+|---|---|---|
+| Food Safety / QA | Checklist, severity, containment, release, regulator escalation | Can stop for safety or critical false-pass risk |
+| Security | Device/session integrity, spoofing, replay, access abuse | Can stop for integrity or security risk |
+| Privacy / Legal | Worker notice, lawful basis, retention, deletion, incident response | Can stop recording or processing for privacy/legal risk |
+| Operations | Manager capacity, remediation, support, physical-audit execution | Can pause rollout for workload or recovery-capacity failure |
+| Product | Workflow, measurement, coordination, decision log | Cannot override a safety, integrity, privacy, or legal stop |
 
 ## Customer and support communication
 

@@ -297,7 +297,7 @@ A live warehouse recording may capture workers, faces, voices, labels, personal 
 
 **Stage A — Offline model evaluation:** use a labelled set of real, de-identified inspection frames plus clearly labelled synthetic edge cases. Include occlusion, low light, clutter, camera shake, and staged scenes. Measure recall separately for every critical finding; do not average away a weak category.
 
-**Stage B — Shadow mode:** run in a small set of volunteer stores for 4 weeks. AI produces findings, but human reviewers make all operational decisions. Compare model findings with blinded human review and physical spot checks.
+**Stage B — Shadow mode:** run for 4 weeks in a documented mixed cohort covering layouts, risk levels, devices, connectivity, and operating contexts. Volunteer participation may be used only where necessary and must be labelled as a source of bias. AI produces findings, but human reviewers make all operational decisions. Compare model findings with blinded human review and physical spot checks.
 
 **Stage C — Controlled pilot:** expand only if shadow-mode safety thresholds pass. Example pilot shape—clearly illustrative, to be sized after baseline—is 20 stores, 8 weeks, two routine checks per week, risk-triggered checks, and a matched comparison cohort.
 
@@ -307,7 +307,7 @@ These are proposed go/no-go thresholds, not achieved results:
 
 | Measure | Pilot threshold | If missed |
 |---|---:|---|
-| Recall on clearly visible critical findings | ≥95% in shadow mode | No auto-pass; retrain or narrow scope |
+| Recall on clearly visible critical findings | ≥95% on the frozen holdout and shadow challenge sample, by category | No auto-pass; retrain or narrow scope |
 | Critical false-pass rate in blinded human/physical audit | ≤1% | Disable automation and investigate |
 | Valid session coverage | ≥95% of required zones | Treat as incomplete; require re-scan |
 | Suspected spoof/integrity exception rate | <3% of sessions, with all high-risk cases reviewed | Tighten device/location controls |
@@ -327,7 +327,7 @@ Immediately disable auto-pass and revert to human review if there is a critical 
 1. **Internal readiness:** approve checklist, retention, training, incident playbook, and thresholds.
 2. **Shadow mode:** model observes; humans decide.
 3. **Human-gated operations:** AI can recommend hold/pass, but reviewer confirms every decision.
-4. **Narrow automation:** auto-pass only for low-risk, high-confidence, complete sessions; all critical and ambiguous cases remain human-gated.
+4. **Narrow automation:** consider auto-pass only for a separately approved low-risk, high-confidence, complete-session subset after the safety, integrity, workload, privacy, and physical-audit gates pass; all critical and ambiguous cases remain human-gated.
 5. **Scale:** add stores only after four consecutive weeks of threshold compliance and a random physical-audit pass rate that the QA team accepts.
 
 ### North Star and guardrails
@@ -385,7 +385,7 @@ Approve a 4-week offline/shadow evaluation after Zepto supplies de-identified in
 
 ## Portfolio narrative
 
-I reframed a high-emotion hygiene scandal as a systems problem: the customer needs confidence, the manager needs a workable control, and the quality team needs evidence that is frequent and difficult to fake. I selected a small, testable intervention—verified phone walkthroughs with AI triage—while keeping human and regulatory oversight in the loop. The key product insight is that trust is rebuilt by an auditable prevention-and-remediation system, not by a badge or a one-time inspection.
+I reframed a high-emotion hygiene problem as a systems problem: the customer needs confidence, the manager needs a workable control, and the quality team needs evidence that is frequent and difficult to fake. I selected a small, testable intervention—verified phone walkthroughs with AI triage—while keeping human and regulatory oversight in the loop. The key product insight is that trust is rebuilt by an auditable prevention-and-remediation system, not by a badge or a one-time inspection.
 
 ## Validation package
 
