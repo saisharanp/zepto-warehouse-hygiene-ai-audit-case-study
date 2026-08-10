@@ -387,4 +387,5 @@ I reframed a high-emotion hygiene scandal as a systems problem: the customer nee
 - [Synthetic case replay](stage-05-validation-pilot/51_synthetic_case_replay.csv)
 - [Pilot scorecard](stage-05-validation-pilot/52_pilot_scorecard.md)
 - [Runbook and rollback](stage-05-validation-pilot/54_runbook_and_rollback.md)
+- [Data readiness and shadow setup](stage-05-validation-pilot/56_data_readiness_and_shadow_setup.md)
 - [Stage 5 approval gate](stage-05-validation-pilot/55_stage5_approval_gate.md)

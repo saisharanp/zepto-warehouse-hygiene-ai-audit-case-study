@@ -33,7 +33,7 @@ The system should rebuild trust through frequent, traceable, independently chall
 | 02 Define and prioritize | [Problem and opportunity](../stage-02-define-prioritize/20_problem_and_opportunity.md) |
 | 03 Solution design | [Verified Hygiene Check](../stage-03-solution-design/30_verified_hygiene_check.md) |
 | 04 Product delivery | [PRD and technical contract](../stage-04-product-delivery/40_prd_and_delivery.md) |
-| 05 Validation and pilot | [Validation protocol](../stage-05-validation-pilot/50_validation_protocol.md), [synthetic replay](../stage-05-validation-pilot/51_synthetic_case_replay.csv), [scorecard](../stage-05-validation-pilot/52_pilot_scorecard.md), [runbook](../stage-05-validation-pilot/54_runbook_and_rollback.md), [approval gate](../stage-05-validation-pilot/55_stage5_approval_gate.md) |
+| 05 Validation and pilot | [Validation protocol](../stage-05-validation-pilot/50_validation_protocol.md), [synthetic replay](../stage-05-validation-pilot/51_synthetic_case_replay.csv), [scorecard](../stage-05-validation-pilot/52_pilot_scorecard.md), [runbook](../stage-05-validation-pilot/54_runbook_and_rollback.md), [data readiness](../stage-05-validation-pilot/56_data_readiness_and_shadow_setup.md), [approval gate](../stage-05-validation-pilot/55_stage5_approval_gate.md) |
 | 06 Launch and scale | [Launch and scale plan](../stage-06-launch-scale/60_launch_and_scale.md) |
 | 07 Final handoff | This readout |
 
