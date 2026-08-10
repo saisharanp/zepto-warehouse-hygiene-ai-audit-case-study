@@ -22,6 +22,14 @@ Use the [metric dictionary and sampling plan](53_metric_dictionary_and_sampling_
 5. A labelled holdout set containing poor lighting, occlusion, clutter, camera shake, empty shelves, staged scenes, and incomplete routes.
 6. Human reviewers trained to apply the same checklist independently.
 
+## Evaluation design and denominator gate
+
+- **Offline holdout:** The denominator for critical recall is adjudicated positive evidence items by finding category. Each category must meet the minimum positive-case count approved by QA/Analytics; otherwise mark the category **not evaluable**, not passed.
+- **Shadow mode:** The denominator for completion and integrity metrics is every attempted session, including incomplete and rejected attempts. The denominator for counterfactual false-pass is every adjudicated critical case evaluated.
+- **Controlled pilot:** The illustrative 20-store/eight-week shape is a planning example, not a powered sample size. Analytics must pre-register the cohort, comparison method, effect size, power or precision target, and minimum observation window before using complaint outcomes.
+- **Customer outcomes:** Severe hygiene complaints must use relevant orders as the denominator and include baseline, comparison cohort, seasonality, affected-category scope, and confidence intervals where appropriate.
+- **Decision discipline:** Process metrics can establish operational readiness; they cannot by themselves prove fewer incidents or increased customer trust.
+
 ## Hypotheses and tests
 
 | ID | Hypothesis | Test | Pass threshold |
@@ -31,7 +39,7 @@ Use the [metric dictionary and sampling plan](53_metric_dictionary_and_sampling_
 | H3 | A scan can prove facility/session integrity better than self-attestation. | Replay, gallery-upload, mock-location, QR/NFC mismatch, device-integrity, and interrupted-session tests. | 100% of deliberately invalid test cases rejected or routed to human review. |
 | H4 | Managers can complete a full route without material operational burden. | Task-based shadow study with observed completion time and error logging. | Median completion time ≤15 minutes; ≥90% of due sessions within SLA. |
 | H5 | Findings lead to remediation. | Shadow-to-operations replay: assign owner, SLA, hold scope, and re-check. | ≥95% of critical remediation tasks closed within SLA during pilot. |
-| H6 | The workflow improves real-world control, not just documentation. | Controlled pilot against baseline/matched comparison cohort. | Directional reduction in severe hygiene complaints; target ≥20% after 8 weeks, pending baseline. |
+| H6 | The workflow improves real-world control, not just documentation. | Controlled pilot against baseline/matched comparison cohort with a pre-registered denominator and analysis plan. | Exploratory directional signal only; a ≥20% reduction may be a planning aspiration after baseline and power/precision review, not an automatic launch gate. |
 
 Thresholds are proposed go/no-go criteria, not results.
 
@@ -88,6 +96,10 @@ Advance to a controlled operational pilot only when:
 - the incident and rollback runbook has an owner and tested contact path;
 - licensee/store managers have training and a remediation budget;
 - customer communication and affected-SKU hold rules are approved.
+
+### E. Controlled operational pilot
+
+Run the approved eight-week human-gated pilot only after the offline and four-week shadow gates pass. The illustrative 20-store/two-checks-per-week shape must be resized using the baseline, capacity model, comparison design, and a pre-registered power or precision assessment. Human reviewers make every operational decision; this phase does not enable autonomous pass or a customer-facing badge.
 
 ## Evaluation rules
 

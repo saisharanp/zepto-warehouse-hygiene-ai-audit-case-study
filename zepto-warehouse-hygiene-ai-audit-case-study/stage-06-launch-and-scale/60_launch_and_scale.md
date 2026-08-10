@@ -4,11 +4,12 @@
 
 ## Rollout phases
 
-1. **Readiness:** Approve checklist, retention, training, incident playbook, and thresholds.
-2. **Shadow mode:** AI observes; humans decide.
-3. **Human-gated operations:** AI recommends hold/pass; reviewer confirms every decision.
-4. **Narrow automation:** Consider auto-pass only for a separately approved low-risk, high-confidence, complete-session subset after the safety, integrity, workload, privacy, and physical-audit gates pass; critical/ambiguous cases remain human-gated.
-5. **Scale:** Add stores only after four consecutive weeks of threshold compliance and acceptable random physical-audit results.
+1. **Data readiness:** Approve checklist, data handling, cohort, cost inputs, training, incident playbook, and thresholds.
+2. **Offline evaluation:** Run the frozen holdout and invalid-session challenge set; no operational decisions or customer claim.
+3. **Shadow mode:** Run for four weeks; AI observes and humans decide.
+4. **Human-gated controlled pilot:** Run the approved eight-week pilot with reviewer confirmation for every operational decision.
+5. **Automation gate:** Consider auto-pass only for a separately approved low-risk, high-confidence, complete-session subset after the safety, integrity, workload, privacy, and physical-audit gates pass; critical/ambiguous cases remain human-gated.
+6. **Scale:** Add stores only after the human-gated pilot, then four consecutive weeks of threshold compliance and acceptable random physical-audit results.
 
 ## North Star
 
@@ -102,7 +103,7 @@ The launch gate should require positive capacity headroom for normal and risk-tr
 
 ## Stage 06 decision gate
 
-**Decision:** Scale only after Stage 05 thresholds pass for the approved period.
+**Decision:** Scale only after the data-readiness, offline, four-week shadow, and eight-week human-gated pilot gates pass, followed by four consecutive compliant weeks under the approved operating policy.
 
 **Recommendation:** Treat operational compliance, model safety, privacy, and customer outcomes as a joint launch gate.
 

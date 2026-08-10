@@ -10,9 +10,11 @@
 ## Stage map
 
 - [Stage 00 — Research setup](stage-00-research-setup/00_research_brief.md)
+  - [Evidence and claim ledger](stage-00-research-setup/01_evidence_claim_ledger.md)
   - [Cost model and unit economics](stage-00-research-setup/05_cost_model_and_unit_economics.md)
   - [Cost input template / shadow budget gate](stage-00-research-setup/06_zepto_cost_input_template.md)
 - [Stage 01 — Discovery](stage-01-discovery/10_discovery_synthesis.md)
+  - [Evidence coding sheet](stage-01-discovery/11_evidence_coding_sheet.md)
 - [Stage 02 — Define and prioritize](stage-02-define-and-prioritize/20_problem_and_opportunity.md)
 - [Stage 03 — Solution design](stage-03-solution-design/30_verified_hygiene_check.md)
   - [Wireframes and design traceability](stage-03-solution-design/31_verified_hygiene_wireframes.md)
@@ -23,6 +25,23 @@
 - [Stage 07 — Final handoff](stage-07-final-handoff/70_final_handoff.md)
   - [Post-launch review template](stage-07-final-handoff/71_post_launch_review_template.md)
   - [Tool-ready collaboration map](stage-07-final-handoff/72_tools_map.md)
+  - [Decision log](stage-07-final-handoff/73_decision_log.md)
+  - [Glossary](stage-07-final-handoff/74_glossary.md)
+
+## Canonical decision sequence
+
+The case study uses one gated path across the stages:
+
+```text
+Data readiness
+  → Offline evaluation
+  → 4-week shadow mode (AI observes; humans decide)
+  → 8-week human-gated controlled pilot
+  → Separate automation gate
+  → Scale after four consecutive compliant weeks
+```
+
+The 20-store/eight-week shape is illustrative until Zepto provides baseline, cohort, capacity, and power/precision inputs. No stage authorises a customer-facing badge or autonomous food-safety decision by itself.
 
 ## Executive summary
 
@@ -38,7 +57,7 @@ I recommend a **Verified Hygiene Check** workflow:
 2. The manager opens a locked Zepto operations flow that cannot accept gallery uploads.
 3. The phone records a guided, live walkthrough of every required zone, including random challenge prompts.
 4. The app captures time, device integrity, geofence, an in-store QR/NFC challenge, route coverage, and a cryptographic evidence hash.
-5. AI checks video quality and visible hygiene signals, then returns **pass, fail/hold, or human review** with evidence frames and confidence.
+5. AI checks video quality and visible hygiene signals, then returns a **no-critical-issue recommendation, fail/hold recommendation, or human-review state** with evidence frames and confidence; only an authorised human can release a hold.
 6. Critical failures pause affected inventory or food operations and create an accountable remediation task.
 7. Random independent human checks calibrate the model and reduce the opportunity for collusion or staged scans.
 
@@ -151,16 +170,19 @@ Zepto customers need confidence that food and household products were stored hyg
 
 **Recommended opportunity:** verified routine virtual checks with AI triage and risk-triggered human inspection.
 
-### Illustrative prioritization
+### Opportunity prioritization
 
-Scores below are assumptions for product selection, not observed business metrics. Impact, confidence, and effort are each scored 1–5; higher is better for impact/confidence and lower is better for effort.
+The primary opportunity is to increase check frequency, verify evidence provenance, detect visible risks earlier, and close remediation between physical inspections. Customer confidence is a downstream outcome, not the MVP control.
 
-| Option | Impact | Confidence | Effort | Recommendation |
-|---|---:|---:|---:|---|
-| Routine verified phone walkthrough + AI triage | 5 | 3 | 3 | Select for pilot |
-| Increase scheduled physical inspections only | 4 | 4 | 5 | Keep as independent control, not sole solution |
-| Permanent CCTV / IoT sensors in every store | 4 | 2 | 5 | Defer; higher cost and coverage/privacy burden |
-| Public “hygiene badge” without a new control loop | 2 | 2 | 1 | Reject; risks false reassurance |
+### RICE prioritization
+
+The qualitative screen in [Stage 02](stage-02-define-and-prioritize/20_problem_and_opportunity.md) selects Verified Hygiene Check for validation. Formal RICE remains gated on Zepto inputs:
+
+```text
+RICE score = Reach × Impact × Confidence ÷ Effort
+```
+
+Reach must use an approved store-check or store-week denominator; Impact must map to fewer severe hygiene exceptions; Confidence must link to the evidence ledger; Effort must use cross-functional person-months. The current RICE table is intentionally `TBD` because public reporting does not provide Zepto’s cohort denominator or delivery effort. This prevents false precision before the pilot budget and baseline are approved.
 
 ### Non-goals
 
@@ -185,7 +207,7 @@ Guided route: receiving → ambient → chilled/frozen → returns/quarantine �
         ↓
 AI checks coverage, image quality, and visible control failures
         ↓
-Pass / Fail-Hold / Human Review
+AI recommendation: no-critical-issue / fail-hold / human review
         ↓
 Remediation task + evidence + re-check
         ↓
@@ -227,7 +249,7 @@ The design reduces the opportunity for bribery or delayed inspections; it does n
 
 | Outcome | Trigger | Operational action | Human role |
 |---|---|---|---|
-| **Pass** | Complete route, valid location/session evidence, no critical finding, high model confidence, and reconciled temperature/expiry records. | Store remains operational; next routine check scheduled. | Sample for audit. |
+| **No-critical-issue recommendation** | Complete route, valid location/session evidence, no critical finding, high model confidence, and reconciled temperature/expiry records. | Present evidence to an authorised reviewer; no release from AI output alone. | Confirm scope, records, and decision rationale. |
 | **Fail / Hold** | High-confidence critical finding: visible contamination/fungal growth, pest evidence, food near stagnant water, expired stock mixed with saleable stock, or a confirmed cold-chain breach. | Quarantine affected SKUs/zone; pause relevant food operations if policy requires; notify quality lead and manager. | Review within SLA; regulatory escalation where required. |
 | **Human review** | Low coverage, poor lighting, model disagreement, suspected spoofing, ambiguous expiry text, or manager appeal. | Do not expose a green status; risk-based temporary restriction. | Quality reviewer decides and may order a physical visit. |
 
@@ -273,6 +295,8 @@ If a critical failure affects customer orders, Zepto should have a batch/zone tr
 | VHC-09 | Privacy | Faces/audio are not needed; blur faces, avoid audio by default, restrict access, define retention, and provide worker notice. |
 | VHC-10 | Independent challenge | System samples stores for unannounced human audits and reports AI/human disagreement. |
 
+In the MVP, a no-critical-issue AI recommendation is not a release decision. `Verified-no-critical-issue` requires an authorised human decision after evidence, scope, and required records are reviewed.
+
 ### Key data contract
 
 `check_id`, `store_id`, `licensee_id`, `task_id`, `scheduled_at`, `started_at`, `ended_at`, `device_attestation`, `location_signals`, `zone_checkpoints`, `coverage_score`, `media_hashes`, `finding_type`, `severity`, `confidence`, `model_version`, `temperature_log_reference`, `expiry_sample_reference`, `verdict`, `reviewer_id`, `remediation_id`, `recheck_id`, `retention_expiry`.
@@ -310,7 +334,7 @@ A live warehouse recording may capture workers, faces, voices, labels, personal 
 
 **Stage B — Shadow mode:** run for 4 weeks in a documented mixed cohort covering layouts, risk levels, devices, connectivity, and operating contexts. Volunteer participation may be used only where necessary and must be labelled as a source of bias. AI produces findings, but human reviewers make all operational decisions. Compare model findings with blinded human review and physical spot checks.
 
-**Stage C — Controlled pilot:** expand only if shadow-mode safety thresholds pass. Example pilot shape—clearly illustrative, to be sized after baseline—is 20 stores, 8 weeks, two routine checks per week, risk-triggered checks, and a matched comparison cohort.
+**Stage C — Controlled pilot:** expand only if shadow-mode safety thresholds pass. Example pilot shape—clearly illustrative, to be sized after baseline—is 20 stores, 8 weeks, two routine checks per week, risk-triggered checks, and a matched comparison cohort. This shape is not powered by itself to prove a 20% complaint reduction; Analytics must pre-register the denominator, comparison method, and power/precision assessment.
 
 ### Pre-declared pilot thresholds
 
@@ -325,7 +349,7 @@ These are proposed go/no-go thresholds, not achieved results:
 | Due checks completed within SLA | ≥90% | Adjust cadence, staffing, or manager workflow |
 | Critical remediation closed within SLA | ≥95% | Escalate licensee/quality ownership; no scale |
 | Manager median completion time | ≤15 minutes | Simplify route or change cadence |
-| Severe hygiene complaints | Directional decrease versus baseline/matched cohort; target ≥20% after 8 weeks | Do not claim trust impact; continue diagnosis |
+| Severe hygiene complaints | Exploratory directional signal versus baseline/matched cohort; ≥20% is a planning aspiration only after power/precision review | Do not claim trust impact; continue diagnosis |
 
 ### Rollback criteria
 
@@ -335,11 +359,12 @@ Immediately disable auto-pass and revert to human review if there is a critical 
 
 ### Rollout phases
 
-1. **Internal readiness:** approve checklist, retention, training, incident playbook, and thresholds.
-2. **Shadow mode:** model observes; humans decide.
-3. **Human-gated operations:** AI can recommend hold/pass, but reviewer confirms every decision.
-4. **Narrow automation:** consider auto-pass only for a separately approved low-risk, high-confidence, complete-session subset after the safety, integrity, workload, privacy, and physical-audit gates pass; all critical and ambiguous cases remain human-gated.
-5. **Scale:** add stores only after four consecutive weeks of threshold compliance and a random physical-audit pass rate that the QA team accepts.
+1. **Data readiness:** approve checklist, data handling, cohort, cost inputs, training, incident playbook, and thresholds.
+2. **Offline evaluation:** run the frozen holdout and invalid-session challenge set; no operational decisions or customer claim.
+3. **Shadow mode:** run for four weeks; model observes and humans decide.
+4. **Human-gated controlled pilot:** run the approved eight-week pilot with reviewer confirmation for every operational decision.
+5. **Automation gate:** consider auto-pass only for a separately approved low-risk, high-confidence, complete-session subset after the safety, integrity, workload, privacy, and physical-audit gates pass; all critical and ambiguous cases remain human-gated.
+6. **Scale:** add stores only after the human-gated pilot, then four consecutive weeks of threshold compliance and an acceptable random physical-audit result.
 
 ### North Star and guardrails
 

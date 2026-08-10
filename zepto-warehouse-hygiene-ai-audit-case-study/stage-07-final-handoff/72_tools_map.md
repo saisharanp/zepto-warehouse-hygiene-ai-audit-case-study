@@ -21,7 +21,7 @@ Use GitHub Issues/Projects, Jira, Linear, or the organisation’s approved equiv
 
 ## Required fields for each live work item
 
-`work_item_id`, `stage`, `workstream`, `owner`, `approver`, `status`, `priority`, `decision_needed`, `dependency`, `risk`, `target_date`, `evidence_link`, `policy_version`, `cost_impact`, `rollback_trigger`, `last_reviewed_at`.
+`work_item_id`, `stage`, `workstream`, `owner`, `approver`, `status`, `priority`, `rice_reach`, `rice_impact`, `rice_confidence`, `rice_effort`, `rice_score`, `decision_id`, `evidence_claim_id`, `decision_needed`, `dependency`, `risk`, `target_date`, `evidence_link`, `policy_version`, `cost_impact`, `rollback_trigger`, `last_reviewed_at`.
 
 ## Dashboard views
 

@@ -28,7 +28,7 @@ The example design below is illustrative and must be sized after baseline review
 | Median manager completion time | Start-to-submit time for valid full route | ≤15 minutes | — | Not run | Product |
 | Critical remediation within SLA | Closed critical tasks / critical tasks due | ≥95% | — | Not run | QA / licensee |
 | AI-human agreement | Matching final finding class on sampled sessions | Baseline first; improve by iteration | — | Not run | ML + QA |
-| Severe hygiene complaints | Complaints per 10,000 relevant orders vs baseline/control | Directional reduction; target ≥20% after 8 weeks | — | Not run | Support / Analytics |
+| Severe hygiene complaints | Complaints per 10,000 relevant orders vs baseline/control | Exploratory directional signal; ≥20% is a planning aspiration only after baseline and power/precision review | — | Not run | Support / Analytics |
 | AI inference cost per scan | Metered model inference charges / completed scans, segmented by mode | ₹0.91 low-resolution reference; ₹8.04 default-resolution reference | — | Not run | ML / Finance |
 | Worker privacy incidents | Confirmed incidents involving capture/access/retention | 0 | — | Not run | Privacy |
 

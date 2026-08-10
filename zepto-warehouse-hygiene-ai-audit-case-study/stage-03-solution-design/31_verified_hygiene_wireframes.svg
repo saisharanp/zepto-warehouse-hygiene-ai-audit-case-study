@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1220" viewBox="0 0 1800 1220" role="img" aria-labelledby="title desc">
   <title id="title">Verified Hygiene Check low-fidelity wireframes</title>
-  <desc id="desc">Six annotated product wireframes covering operations queue, manager task start, guided capture, QA review, remediation, and customer verification detail.</desc>
+  <desc id="desc">Six annotated product wireframes covering operations queue, manager task start, guided capture, QA review, remediation, and customer verification detail. All displayed data is illustrative sample data, not live Zepto telemetry.</desc>
   <style>
     .canvas { fill: #eef2f7; }
     .panel { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; }
@@ -28,7 +28,7 @@
 
   <rect class="canvas" x="0" y="0" width="1800" height="1220"/>
   <text class="text" x="40" y="35" font-size="24" font-weight="700">Verified Hygiene Check — annotated wireframes</text>
-  <text class="caption" x="40" y="57">Proposed low-fidelity flow. Human decision authority remains visible in every safety-critical state.</text>
+  <text class="caption" x="40" y="57">Proposed low-fidelity flow. Illustrative sample data — not live Zepto telemetry. Human decision authority remains visible.</text>
 
   <!-- W-01 -->
   <g>
@@ -52,17 +52,17 @@
     <text class="muted label" x="330" y="318">STATUS</text>
     <text class="muted label" x="460" y="318">DUE</text>
     <line class="line" x1="84" y1="329" x2="536" y2="329"/>
-    <text class="text body" x="84" y="359">Narsingi · complaint trigger</text>
+    <text class="text body" x="84" y="359">Example store A · complaint trigger</text>
     <rect class="red-soft" x="330" y="341" width="98" height="25" rx="12"/>
     <text class="red small" x="348" y="359">High risk</text>
     <text class="text small" x="460" y="359">10:30</text>
     <line class="line" x1="84" y1="378" x2="536" y2="378"/>
-    <text class="text body" x="84" y="408">Malkajgiri · overdue</text>
+    <text class="text body" x="84" y="408">Example store B · overdue</text>
     <rect class="amber-soft" x="330" y="390" width="98" height="25" rx="12"/>
     <text class="amber small" x="350" y="408">Overdue</text>
     <text class="text small" x="460" y="408">11:00</text>
     <line class="line" x1="84" y1="427" x2="536" y2="427"/>
-    <text class="text body" x="84" y="457">Mallepally · suspect session</text>
+    <text class="text body" x="84" y="457">Example store C · suspect session</text>
     <rect class="blue-soft" x="330" y="439" width="98" height="25" rx="12"/>
     <text class="blue small" x="348" y="457">Review</text>
     <text class="text small" x="460" y="457">12:00</text>
@@ -81,7 +81,7 @@
     <text class="white title" x="790" y="188">Today’s check</text>
     <text class="white small" x="963" y="188">⋯</text>
     <text class="muted label" x="792" y="239">STORE</text>
-    <text class="text body" x="792" y="262">Narsingi · NSG-018</text>
+    <text class="text body" x="792" y="262">Example store A · EX-018</text>
     <rect class="blue-soft" x="792" y="280" width="196" height="48" rx="8"/>
     <text class="blue label" x="808" y="301">DUE BY 10:30</text>
     <text class="blue small" x="808" y="319">Complaint-triggered check</text>
@@ -130,7 +130,7 @@
     <text class="text panel-title" x="64" y="674">W-04 QA evidence review</text>
     <text class="caption" x="64" y="696">Reviewer can see model output, policy context, evidence, and decision authority.</text>
     <rect class="screen" x="64" y="714" width="492" height="420" rx="8"/>
-    <text class="muted label" x="84" y="744">CASE VH-01842 · Malkajgiri · 10:18</text>
+    <text class="muted label" x="84" y="744">CASE VH-01842 · Example store B · 10:18</text>
     <rect class="red-soft" x="84" y="762" width="116" height="28" rx="14"/>
     <text class="red label" x="101" y="781">CRITICAL</text>
     <rect class="amber-soft" x="214" y="762" width="112" height="28" rx="14"/>

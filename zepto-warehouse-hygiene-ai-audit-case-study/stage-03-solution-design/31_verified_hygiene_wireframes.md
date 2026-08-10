@@ -1,6 +1,6 @@
 # Stage 03 — Verified Hygiene Check Wireframes
 
-**Status:** Proposed low-fidelity design; not a production UI or Figma file
+**Status:** Proposed low-fidelity design; not a production UI or Figma file; all counts, names, timestamps, and statuses are illustrative sample data
 **Purpose:** Make the key user, review, and exception states tangible enough to test before engineering investment
 **Related PRD:** [PRD and technical contract](../stage-04-product-delivery/40_prd_and_delivery.md)
 
@@ -16,6 +16,8 @@
 ## Wireframes
 
 ![Verified Hygiene Check annotated wireframes](31_verified_hygiene_wireframes.svg)
+
+The SVG is an editable design artifact for workflow review. Its store names, counts, timestamps, case IDs, and model confidence values are examples only—not live Zepto telemetry, pilot results, or evidence of current store status.
 
 ## Screen map
 

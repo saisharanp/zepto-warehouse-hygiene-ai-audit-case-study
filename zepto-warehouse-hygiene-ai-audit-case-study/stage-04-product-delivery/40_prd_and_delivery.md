@@ -8,6 +8,10 @@ Increase the frequency and credibility of hygiene controls between physical insp
 
 Build **Verified Hygiene Check** as a human-gated control system for visible hygiene and evidence integrity. AI may triage evidence and recommend a workflow state; it must not be presented as a regulatory certificate or as proof of microbial safety.
 
+### Model-provider boundary
+
+The PRD is vendor-neutral. The Gemini scenarios in the cost section are reference pricing benchmarks only; the production provider/model remains an open decision subject to category-level safety results, privacy and security review, data-handling terms, latency, availability, structured-output quality, and ₹ cost. Provider changes require regression testing and a re-gate.
+
 ### Primary user and decision owner
 
 | Role | Product job | Decision authority |
@@ -65,7 +69,7 @@ Build **Verified Hygiene Check** as a human-gated control system for visible hyg
 | VHC-03 | P0 | Facility/session verification | Given a manager inside a store, when the session is started, then geofence, rotating QR/NFC, device/session signals, and task identity are reconciled; GPS alone cannot produce a valid session. |
 | VHC-04 | P0 | Guided coverage | Given a required route, when a zone is captured, then the app records the zone checkpoint, quality result, timestamp, prompt response, and coverage status; missing or insufficient evidence blocks submission or creates an explicit human-review state. |
 | VHC-05 | P0 | Explainable AI triage | Given valid media and structured records, when analysis completes, then each finding contains category, severity suggestion, evidence frame/timestamp, confidence, `unknown` eligibility, model version, policy version, and processing status. |
-| VHC-06 | P0 | Safe decisioning | Given a critical, low-confidence, ambiguous, or integrity-exception case, when a decision is requested, then the system cannot auto-pass it and must route it to an authorised reviewer or physical-check path. |
+| VHC-06 | P0 | Safe decisioning | Given a critical, low-confidence, ambiguous, or integrity-exception case, when a decision is requested, then the system cannot auto-pass it and must route it to an authorised reviewer or physical-check path. During MVP, even a no-critical-issue AI recommendation is not a release decision. |
 | VHC-07 | P0 | Remediation and re-check | Given a hold or corrective action, when a reviewer saves the decision, then the system creates affected scope, owner, SLA, corrective action, containment status, and re-check requirements; release requires authorised approval. |
 | VHC-08 | P0 | Audit trail | Given any evidence, model, reviewer, verdict, hold, release, or deletion event, then the system preserves a time-ordered audit record with actor, reason, policy/model version, and evidence references subject to retention policy. |
 | VHC-09 | P0 | Privacy and worker safeguards | Given capture is enabled, then audio is off by default, notice and lawful basis are recorded, raw access is role-restricted, faces/personal screens are redacted for broad review, and deletion is verifiable. |
@@ -104,6 +108,8 @@ Tasked
 ```
 
 `unknown`, `incomplete`, and `integrity exception` are first-class states. They must never be coerced into `Verified-no-critical-issue` to improve completion metrics.
+
+`Verified-no-critical-issue` is an authorised human decision state. It is not a raw model output and is not a regulatory certificate.
 
 ### Event contract
 
@@ -209,6 +215,8 @@ Candidate performance and availability targets should be set after the device/co
 
 ## Delivery plan
 
+Feature sequencing follows the [Stage 02 qualitative screen and RICE input gate](../stage-02-define-and-prioritize/20_problem_and_opportunity.md). P0 is reserved for the minimum safe control loop; RICE inputs must be populated before adding deferred automation or broad integrations.
+
 | Phase | Exit evidence | Decision owner |
 |---|---|---|
 | 1. Policy mapping and data review | Checklist/SOP mapping, label guide, data inventory, privacy basis, and hold policy | Food Safety + Privacy/Legal |
@@ -236,8 +244,8 @@ The reference cost model assumes a 15-minute walkthrough sampled at 1 FPS and 1,
 
 | Mode | AI inference estimate / scan | Product policy |
 |---|---:|---|
-| Gemini 2.5 Flash-Lite, low-resolution screening | **₹0.91** | Default screening path in the cost model |
-| Gemini 2.5 Flash, default-resolution escalation | **₹8.04** | Use only when evidence quality or finding complexity warrants it |
+| Reference low-resolution multimodal model (Gemini 2.5 Flash-Lite benchmark) | **₹0.91** | Default screening path in the cost model |
+| Reference default-resolution multimodal model (Gemini 2.5 Flash benchmark) | **₹8.04** | Use only when evidence quality or finding complexity warrants it |
 
 These figures cover model inference only. They exclude manager time, QA review, retries, mobile data, storage, platform, privacy/security, remediation, and independent physical audits. The reference total is approximately **₹60.35 per scan before physical-audit allocation** and **₹252.66 per scan with the illustrative audit allocation**. The implementation must meter actual input/output tokens, retries, fallback rate, and media volume; no scale approval should use the AI line as a proxy for total check cost. See the [Stage 00 cost model](../stage-00-research-setup/05_cost_model_and_unit_economics.md).
 

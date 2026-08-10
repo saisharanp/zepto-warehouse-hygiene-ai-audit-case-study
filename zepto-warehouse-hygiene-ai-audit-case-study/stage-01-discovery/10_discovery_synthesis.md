@@ -1,5 +1,7 @@
 # Stage 01 — Discovery Synthesis
 
+The [evidence coding sheet](11_evidence_coding_sheet.md) provides the structured sample behind this synthesis; the [Stage 00 evidence ledger](../stage-00-research-setup/01_evidence_claim_ledger.md) controls claim strength and limitations.
+
 ## Evidence-backed findings
 
 1. **Repeated control categories appeared across reported Hyderabad locations.** July reports described dirty racks/floors/fixtures, food stored on the ground, waste, weak food/non-food segregation, pest evidence, and missing or poorly displayed records.

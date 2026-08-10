@@ -13,7 +13,7 @@ Guided route: receiving → ambient → chilled/frozen → quarantine → dispat
         ↓
 AI checks coverage, quality, and visible control failures
         ↓
-Pass / Fail-Hold / Human Review
+AI recommendation: no-critical-issue / fail-hold / human review
         ↓
 Remediation task + evidence + re-check
         ↓
@@ -67,13 +67,13 @@ GPS or geotagging alone cannot prove that a scan is genuine. The layered bundle 
 
 | Outcome | Trigger | Action |
 |---|---|---|
-| Pass | Complete and valid session, no critical finding, high confidence, reconciled temperature/expiry evidence | Keep store operational; schedule next check; sample for audit |
+| No-critical-issue recommendation | Complete and valid session, no critical finding, high confidence, reconciled temperature/expiry evidence | Present evidence to an authorised reviewer; do not release a hold from AI output alone |
 | Fail / Hold | High-confidence critical finding such as pest evidence, visible contamination, stagnant water near food, expiry mix, or confirmed cold-chain breach | Quarantine affected scope; notify QA and manager; human review/escalation |
 | Human review | Low coverage, poor lighting, model disagreement, ambiguous expiry text, or integrity exception | No green status; reviewer decides or orders physical check |
 
 AI recommends workflow state; it is not the final regulatory authority.
 
-During offline evaluation, shadow mode, and the initial human-gated pilot, **Pass** is only an AI recommendation presented to an authorised reviewer. No autonomous release or customer-facing trust claim is enabled. Narrow low-risk automation is a later gate, not an MVP assumption.
+During offline evaluation, shadow mode, and the initial human-gated pilot, the **no-critical-issue recommendation** is only an AI recommendation presented to an authorised reviewer. No autonomous release or customer-facing trust claim is enabled. Narrow low-risk automation is a later gate, not an MVP assumption.
 
 ## Cost implication
 

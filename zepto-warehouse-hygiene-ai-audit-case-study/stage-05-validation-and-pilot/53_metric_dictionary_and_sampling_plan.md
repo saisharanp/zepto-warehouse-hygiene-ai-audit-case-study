@@ -76,6 +76,19 @@ Do not rely only on volunteers. If volunteer participation is necessary, label t
 - Report category-level agreement and disagreement reasons before model threshold tuning.
 - If agreement is weak, revise the policy/checklist before interpreting model performance.
 
+### Denominator and sample-size gate
+
+| Measure | Required denominator | Readiness rule |
+|---|---|---|
+| Critical recall | Adjudicated positive evidence items by finding category | QA/Analytics sets a minimum positive-case count before holdout freeze; below-minimum categories are not evaluable |
+| Critical false-pass | All adjudicated critical cases for which the AI would recommend no critical issue | Include counterfactual recommendations even while human review controls the decision |
+| Route coverage | All required checkpoints for every attempted session | Count missing, skipped, rejected, and re-scanned checkpoints explicitly |
+| Integrity | All attempted sessions, including rejected or incomplete attempts | Report by failure type, device, connectivity, store, and cohort |
+| Severe complaints | Relevant severe complaints / relevant orders × 10,000 | Require baseline, comparison cohort, time window, category scope, and uncertainty estimate before causal interpretation |
+| Cost per verified-control store-day | Total program cost / qualifying store-days | Include one-time, fixed, people, infrastructure, audit, remediation, privacy/security, and incident costs |
+
+The illustrative 20-store/eight-week pilot shape is not automatically powered to detect a 20% complaint reduction. Analytics must complete an effect-size and power/precision assessment—or explicitly label the result directional—before customer-outcome claims are made.
+
 ## Decision rules
 
 1. A critical category below the recall threshold is a fail even if aggregate recall passes.

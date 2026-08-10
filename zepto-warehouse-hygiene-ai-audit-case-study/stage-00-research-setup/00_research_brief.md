@@ -4,6 +4,8 @@
 **Evidence window:** Previous calendar month, July 2026  
 **Status:** Evidence-led proposal; no Zepto internal data or live study claimed
 
+Use the [evidence and claim ledger](01_evidence_claim_ledger.md) as the source-of-truth for claim type, confidence, limitation, and non-claim handling.
+
 ## Opportunity frame
 
 July 2026 reporting described hygiene enforcement at multiple Zepto locations in Hyderabad. Narsingi was reportedly directed to temporarily stop accepting orders while it cleaned and rectified issues; Malkajgiri reporting described food stored on floors, houseflies, poor waste disposal, co-storage, missing records, and a 67% hygiene score; Mallepally reporting described cockroach and rodent evidence.
