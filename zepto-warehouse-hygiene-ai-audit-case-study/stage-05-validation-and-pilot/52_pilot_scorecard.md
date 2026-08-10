@@ -3,6 +3,8 @@
 **Status:** Blank operating template; no results populated  
 **Owner:** Zepto Trust / Food Safety lead, with Product as coordinator
 
+Definitions, denominators, sampling logic, and evidence requirements are specified in the [metric dictionary and sampling plan](53_metric_dictionary_and_sampling_plan.md).
+
 ## Proposed cohort
 
 The example design below is illustrative and must be sized after baseline review:

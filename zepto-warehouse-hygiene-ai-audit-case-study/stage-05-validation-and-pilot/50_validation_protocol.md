@@ -11,6 +11,8 @@ Test whether a guided, location-verified phone walkthrough can reliably identify
 
 This stage validates the control system—not whether Zepto is currently compliant. No live Zepto data, model output, pilot result, or customer outcome is claimed here.
 
+Use the [metric dictionary and sampling plan](53_metric_dictionary_and_sampling_plan.md) to freeze units of analysis, denominators, label quality, cohort strata, and decision rules before evaluation.
+
 ## Inputs required before execution
 
 1. De-identified inspection images/video and adjudicated findings from representative store layouts.

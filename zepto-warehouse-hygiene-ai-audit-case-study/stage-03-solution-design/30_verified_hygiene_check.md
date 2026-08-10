@@ -20,6 +20,36 @@ Remediation task + evidence + re-check
 Random physical audit calibrates and challenges the system
 ```
 
+## Concept comparison
+
+| Concept | Control value | Complexity / cost | Main risk | Decision |
+|---|---|---|---|---|
+| Verified phone walkthrough + AI triage | Increases check frequency and creates traceable evidence between physical inspections | Medium; uses existing manager phones plus capture, review, and audit operations | Route staging, device spoofing, and model blind spots | **Select for validation** |
+| More scheduled physical inspections | Strong independent evidence and regulatory credibility | High travel, staffing, and scheduling burden | Delayed coverage and predictable inspection windows | **Retain as a control, not the sole solution** |
+| Permanent CCTV / IoT sensors everywhere | Higher continuity for selected conditions | High deployment, privacy, maintenance, and integration burden | Cameras still miss concealed or non-visual risks | **Defer** |
+| Self-attested checklist with photo upload | Low implementation effort | Low initial cost | Easy to stage, weak provenance, and delayed review | **Reject** |
+| Customer-facing hygiene badge before calibration | Could communicate transparency | Low build effort but high trust and regulatory risk | False reassurance if the control is not validated | **Reject** |
+
+## Service blueprint
+
+| Blueprint layer | Trigger / touchpoint | Manager or quality action | System evidence | Failure path / owner |
+|---|---|---|---|---|
+| Risk and tasking | Cadence, complaint, return, temperature, pest, or prior finding creates risk | Quality configures scope and due window | `task_id`, risk reason, policy version, due time | Bad trigger or duplicate task → Product Ops |
+| Manager preparation | Push notification opens a signed task | Manager reviews notice, permissions, route, and privacy controls | User/session ID, device state, notice version | Permission or device failure → Operations support |
+| Verified capture | In-app camera, rotating QR/NFC, route checkpoints, random prompt | Manager records each required zone and re-scans weak evidence | GPS, challenge result, timestamps, coverage, media hashes | Missing zone, spoof signal, interrupted upload → Security + QA |
+| AI triage | Media and structured records are available | AI returns finding, confidence, evidence frame, and `unknown` when uncertain | Model/policy version, token usage, finding state | Low confidence or disagreement → Human review |
+| Human decision | Reviewer console shows evidence and context | QA accepts, rejects, changes severity, holds scope, or orders physical check | Reviewer ID, rationale, decision history | Critical ambiguity → Food Safety lead |
+| Remediation | Hold or corrective task is created | Manager/licensee completes corrective action and attaches proof | Owner, SLA, affected scope, remediation evidence | SLA breach → Operations + licensee owner |
+| Re-check and release | Corrective action is ready for verification | QA reviews re-check and releases or extends hold | Re-check ID, release authority, audit trail | Repeat failure → Independent physical audit |
+| Independent challenge | Random or risk-triggered physical audit | Auditor compares site reality with virtual evidence | Audit result, disagreement class, calibration label | Staging/collusion pattern → Security + Food Safety |
+| Customer/support recovery | Affected order, refund, or complaint requires action | Support communicates only approved, proportionate information | Customer-impact link, message template, incident ID | Customer harm or regulator issue → Incident response |
+
+## Wireframe artifact
+
+The proposed screens are shown in [Verified Hygiene Check wireframes](31_verified_hygiene_wireframes.md). The SVG is an actual low-fidelity design artifact, not a claim that a Figma file or production interface exists.
+
+The screens trace to VHC-01 through VHC-10 and include the highest-risk states: location mismatch, incomplete coverage, interrupted upload, `unknown`, critical hold, human review, remediation, and a restrained post-validation customer view.
+
 ## Evidence integrity
 
 - No gallery upload; capture only inside the active session.
@@ -67,6 +97,16 @@ Do not publish an unqualified “AI certified” badge. After validation, use co
 - Temperature requires trusted sensor/log data.
 - Worker faces, voices, and sensitive layout may be captured.
 - Overly punitive workflows may encourage avoidance or falsification.
+
+## Experiment plan
+
+| Hypothesis | Smallest credible test | Primary measure | Decision rule |
+|---|---|---|---|
+| Managers can complete the route without unacceptable operational burden | Moderated task test across supported device classes and store layouts | Median completion time, incomplete-route rate, help requests | Simplify route or change cadence if the proposed workload threshold misses |
+| Layered integrity signals make a submitted session more trustworthy than self-attestation | Synthetic replay plus invalid-session challenge set | Invalid-session rejection or human-review rate; false acceptance by control | No automation if any high-risk invalid case is accepted without review |
+| AI can identify visible critical controls after policy and label calibration | Frozen, store-split holdout with category-level labels | Recall, false-pass rate, unknown rate, calibration | Keep human review and narrow scope if any critical category misses |
+| Findings create real containment and remediation | Workflow replay with QA, Operations, and Food Safety owners | Assignment completeness, hold accuracy, SLA closure, re-check evidence | Do not expand if the workflow produces alerts without accountable closure |
+| A restrained verification detail can improve confidence without overclaiming | Comprehension test comparing neutral verification copy with badge language | Understanding of scope, limitations, and freshness | Do not expose customer-facing messaging if users infer a safety guarantee |
 
 ## Stage 03 decision gate
 

@@ -15,10 +15,14 @@
 - [Stage 01 — Discovery](stage-01-discovery/10_discovery_synthesis.md)
 - [Stage 02 — Define and prioritize](stage-02-define-and-prioritize/20_problem_and_opportunity.md)
 - [Stage 03 — Solution design](stage-03-solution-design/30_verified_hygiene_check.md)
+  - [Wireframes and design traceability](stage-03-solution-design/31_verified_hygiene_wireframes.md)
 - [Stage 04 — Product delivery](stage-04-product-delivery/40_prd_and_delivery.md)
 - [Stage 05 — Validation and pilot](stage-05-validation-and-pilot/50_validation_protocol.md)
+  - [Metric dictionary and sampling plan](stage-05-validation-and-pilot/53_metric_dictionary_and_sampling_plan.md)
 - [Stage 06 — Launch and scale](stage-06-launch-and-scale/60_launch_and_scale.md)
 - [Stage 07 — Final handoff](stage-07-final-handoff/70_final_handoff.md)
+  - [Post-launch review template](stage-07-final-handoff/71_post_launch_review_template.md)
+  - [Tool-ready collaboration map](stage-07-final-handoff/72_tools_map.md)
 
 ## Executive summary
 
@@ -388,6 +392,7 @@ I reframed a high-emotion hygiene scandal as a systems problem: the customer nee
 - [Offline and shadow-mode validation protocol](stage-05-validation-and-pilot/50_validation_protocol.md)
 - [Synthetic case replay](stage-05-validation-and-pilot/51_synthetic_case_replay.csv)
 - [Pilot scorecard](stage-05-validation-and-pilot/52_pilot_scorecard.md)
+- [Metric dictionary and sampling plan](stage-05-validation-and-pilot/53_metric_dictionary_and_sampling_plan.md)
 - [Runbook and rollback](stage-05-validation-and-pilot/54_runbook_and_rollback.md)
 - [Data readiness and shadow setup](stage-05-validation-and-pilot/56_data_readiness_and_shadow_setup.md)
 - [Validation and pilot approval gate](stage-05-validation-and-pilot/55_validation_and_pilot_approval_gate.md)

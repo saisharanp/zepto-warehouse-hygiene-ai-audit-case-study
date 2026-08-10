@@ -14,6 +14,45 @@
 
 **Verified-control store-days:** store-days with complete, location-verified evidence, no unresolved critical exception, and completed remediation/re-check where required.
 
+## Launch readiness and capacity
+
+Do not expand the cohort until the operating system can absorb peak volume. Calculate the following with Zepto’s actual cohort, cadence, and loaded labour inputs:
+
+```text
+Daily due checks = active warehouses × checks per warehouse per day
+
+Required manager minutes = daily due checks × median capture minutes
+
+Required QA minutes = daily due checks × sample rate × median review minutes
+
+Critical-response capacity = expected critical exceptions × review + containment + escalation minutes
+
+Capacity headroom = staffed capacity − required capacity
+```
+
+The launch gate should require positive capacity headroom for normal and risk-triggered peaks, a named overflow owner, and a tested incident contact path. If QA or remediation queues exceed SLA, the system should reduce automation or pause new rollout rather than silently accumulate unresolved work.
+
+## Customer and support communication
+
+- Keep verification detail internal during shadow mode and human-gated pilot.
+- If a customer-facing view is later approved, show last verification date, scope, freshness, and limitations.
+- Never describe the check as a government certificate, microbial guarantee, or proof that no issue exists outside the recorded scope.
+- For affected orders, use approved support/incident templates tied to the hold or remediation decision.
+- Remove or downgrade stale verification detail when the check expires, a critical incident opens, or evidence integrity is questioned.
+
+## Launch-readiness checklist
+
+| Gate | Required evidence | Owner |
+|---|---|---|
+| Product and policy | Approved checklist, decision state model, hold/release authority | Product + Food Safety |
+| Model safety | Category-level recall, false-pass, unknown, and drift report | ML + QA |
+| Evidence integrity | Invalid-session tests, physical challenge results, access audit | Security |
+| Operations capacity | Manager, QA, remediation, support, and incident capacity model | Operations |
+| Privacy and labour | Notice, retention/deletion proof, access roles, incident path | Privacy / Legal |
+| Economics | Actual ₹ inputs, pilot run-rate, audit allocation, and stop-cost | Finance / Product |
+| Training | Manager, reviewer, support, and escalation training completion | Operations |
+| Rollback | Automation pause, evidence preservation, affected-scope review, re-entry criteria | Incident response |
+
 ## Operating metrics and alerts
 
 | Metric | Alert / review trigger |
