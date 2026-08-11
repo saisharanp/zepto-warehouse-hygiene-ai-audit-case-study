@@ -1,4 +1,4 @@
-# Stage 03 — Verified Hygiene Check Wireframes
+# Stage 03: Verified Hygiene Check Wireframes
 
 **Status:** Proposed low-fidelity design; not a production UI or Figma file; all counts, names, timestamps, and statuses are illustrative sample data
 **Purpose:** Make the key user, review, and exception states tangible enough to test before engineering investment
@@ -17,7 +17,7 @@
 
 ![Verified Hygiene Check annotated wireframes](31_verified_hygiene_wireframes.svg)
 
-The SVG is an editable design artifact for workflow review. Its store names, counts, timestamps, case IDs, and model confidence values are examples only—not live Zepto telemetry, pilot results, or evidence of current store status.
+The SVG is an editable design artifact for workflow review. Its store names, counts, timestamps, case IDs, and model confidence values are examples only, not live Zepto telemetry, pilot results, or evidence of current store status.
 
 ## Screen map
 
@@ -37,7 +37,7 @@ The SVG is an editable design artifact for workflow review. Its store names, cou
 - W-04 must provide evidence frames, timestamps, model/policy version, and reviewer rationale together.
 - W-05 must show hold scope and release authority before a manager can mark remediation complete.
 - W-06 must never use “safe,” “certified,” or “AI-approved” language; it should show verification scope and freshness.
-- Every critical state needs a text label, icon, and action—not colour alone.
+- Every critical state needs a text label, icon, and action, not colour alone.
 - Text, prompts, and remediation guidance should support Hindi and other operating-region languages after the baseline language is approved.
 
 ## Traceability

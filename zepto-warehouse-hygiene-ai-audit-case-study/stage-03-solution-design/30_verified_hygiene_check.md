@@ -46,7 +46,7 @@ Random physical audit calibrates and challenges the system
 
 ## Wireframe artifact
 
-The proposed screens are shown in [Verified Hygiene Check wireframes](31_verified_hygiene_wireframes.md). The SVG is an actual low-fidelity design artifact, not a claim that a Figma file or production interface exists.
+The proposed screens are shown in [Verified Hygiene Check wireframes](31_verified_hygiene_wireframes.md). The SVG is the editable low-fidelity source. It is not a production interface or Figma file.
 
 The screens trace to VHC-01 through VHC-10 and include the highest-risk states: location mismatch, incomplete coverage, interrupted upload, `unknown`, critical hold, human review, remediation, and a restrained post-validation customer view.
 

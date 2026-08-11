@@ -27,8 +27,8 @@
   </style>
 
   <rect class="canvas" x="0" y="0" width="1800" height="1220"/>
-  <text class="text" x="40" y="35" font-size="24" font-weight="700">Verified Hygiene Check — annotated wireframes</text>
-  <text class="caption" x="40" y="57">Proposed low-fidelity flow. Illustrative sample data — not live Zepto telemetry. Human decision authority remains visible.</text>
+  <text class="text" x="40" y="35" font-size="24" font-weight="700">Verified Hygiene Check: annotated wireframes</text>
+  <text class="caption" x="40" y="57">Proposed low-fidelity flow. Illustrative sample data: not live Zepto telemetry. Human decision authority remains visible.</text>
 
   <!-- W-01 -->
   <g>
@@ -52,7 +52,7 @@
     <text class="muted label" x="330" y="318">STATUS</text>
     <text class="muted label" x="460" y="318">DUE</text>
     <line class="line" x1="84" y1="329" x2="536" y2="329"/>
-    <text class="text body" x="84" y="359">Example store A · complaint trigger</text>
+    <text class="text body" x="84" y="359">Example store A · complaint</text>
     <rect class="red-soft" x="330" y="341" width="98" height="25" rx="12"/>
     <text class="red small" x="348" y="359">High risk</text>
     <text class="text small" x="460" y="359">10:30</text>
@@ -62,7 +62,7 @@
     <text class="amber small" x="350" y="408">Overdue</text>
     <text class="text small" x="460" y="408">11:00</text>
     <line class="line" x1="84" y1="427" x2="536" y2="427"/>
-    <text class="text body" x="84" y="457">Example store C · suspect session</text>
+    <text class="text body" x="84" y="457">Example store C · session review</text>
     <rect class="blue-soft" x="330" y="439" width="98" height="25" rx="12"/>
     <text class="blue small" x="348" y="457">Review</text>
     <text class="text small" x="460" y="457">12:00</text>
@@ -94,7 +94,7 @@
     <text class="amber small" x="808" y="483">after entering the warehouse.</text>
     <rect class="blue" x="792" y="510" width="196" height="42" rx="8"/>
     <text class="white body" x="838" y="537">Start secure check</text>
-    <text class="caption" x="644" y="560">Error state: location mismatch or expired task routes to support, never silent pass.</text>
+    <text class="caption" x="644" y="585">Error state: location mismatch or expired task routes to support, never silent pass.</text>
   </g>
 
   <!-- W-03 -->
@@ -121,7 +121,7 @@
     <text class="white body" x="1384" y="519">Next zone</text>
     <rect class="white" x="1475" y="493" width="95" height="40" rx="7" stroke="#2563eb"/>
     <text class="blue body" x="1493" y="519">Pause</text>
-    <text class="caption" x="1224" y="560">Failure state: poor visibility blocks completion and asks for a re-scan or human review.</text>
+    <text class="caption" x="1224" y="585">Failure state: poor visibility blocks completion and asks for a re-scan or human review.</text>
   </g>
 
   <!-- W-04 -->
@@ -138,7 +138,7 @@
     <text class="text title" x="84" y="824">Possible pest evidence</text>
     <rect class="dark" x="84" y="842" width="190" height="128" rx="6"/>
     <circle cx="184" cy="902" r="28" fill="#475569"/>
-    <text class="white small" x="117" y="990">Frame 07 · 00:06:18</text>
+    <text class="white small" x="98" y="954">Frame 07 · 00:06:18</text>
     <text class="muted label" x="300" y="848">MODEL SUMMARY</text>
     <text class="text small" x="300" y="872">Confidence: 0.78</text>
     <text class="text small" x="300" y="894">Model: screen-v0.3</text>
@@ -151,7 +151,7 @@
     <text class="white body" x="225" y="1050">Hold</text>
     <rect class="white" x="312" y="1025" width="104" height="38" rx="7" stroke="#b45309"/>
     <text class="amber body" x="327" y="1050">Physical check</text>
-    <text class="caption" x="64" y="1120">Critical finding never auto-passes; reviewer rationale is required before release.</text>
+    <text class="caption" x="64" y="1148">Critical finding never auto-passes; reviewer rationale is required before release.</text>
   </g>
 
   <!-- W-05 -->
@@ -175,7 +175,7 @@
     <text class="white body" x="690" y="1056">Request re-check</text>
     <rect class="white" x="834" y="1030" width="126" height="40" rx="7" stroke="#b91c1c"/>
     <text class="red body" x="859" y="1056">Keep hold</text>
-    <text class="caption" x="644" y="1120">Manager can submit evidence; authorised QA/Food Safety releases the hold.</text>
+    <text class="caption" x="644" y="1148">Manager can submit evidence; authorised QA/Food Safety releases the hold.</text>
   </g>
 
   <!-- W-06 -->
@@ -199,6 +199,6 @@
     <text class="text small" x="1370" y="1055">Does not prove microbial safety.</text>
     <rect class="white" x="1370" y="1075" width="200" height="36" rx="7" stroke="#2563eb"/>
     <text class="blue body" x="1420" y="1099">See verification scope</text>
-    <text class="caption" x="1224" y="1120">If stale or incident-linked, hide this view and route to support policy.</text>
+    <text class="caption" x="1224" y="1148">If stale or incident-linked, hide this view and route to support policy.</text>
   </g>
 </svg>
