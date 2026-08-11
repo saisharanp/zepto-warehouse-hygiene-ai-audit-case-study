@@ -18,6 +18,7 @@
 - [Stage 02 — Define and prioritize](stage-02-define-and-prioritize/20_problem_and_opportunity.md)
 - [Stage 03 — Solution design](stage-03-solution-design/30_verified_hygiene_check.md)
   - [Wireframes and design traceability](stage-03-solution-design/31_verified_hygiene_wireframes.md)
+  - [AI-assisted store audit flow diagrams](stage-03-solution-design/32_ai_assisted_store_audit_flow.md)
 - [Stage 04 — Product delivery](stage-04-product-delivery/40_prd_and_delivery.md)
 - [Stage 05 — Validation and pilot](stage-05-validation-and-pilot/50_validation_protocol.md)
   - [Metric dictionary and sampling plan](stage-05-validation-and-pilot/53_metric_dictionary_and_sampling_plan.md)

@@ -2,6 +2,8 @@
 
 ## Service flow
 
+The end-to-end flow and system boundaries are shown in [AI-assisted store audit flow diagrams](32_ai_assisted_store_audit_flow.md).
+
 ```text
 Risk engine schedules check
         ↓
