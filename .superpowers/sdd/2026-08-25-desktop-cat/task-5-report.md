@@ -149,3 +149,95 @@ locations are not writable in this environment. The mandated writable module
 caches and macOS 15.4 SDK still produce successful checks and a successful
 production build. Live panel behavior awaits Task 6 lifecycle integration, as
 noted above.
+
+## Fix round 1/5
+
+### Changed behavior
+
+- `WorkspaceObserver` now refreshes on both active-application and active-space
+  changes. Native fullscreen entry or exit by the already-frontmost app can
+  therefore refresh the conservative visibility state without an application
+  activation event.
+- Fullscreen classification now requires an on-screen, layer-zero window frame
+  to match a screen frame within an explicit one-point tolerance for origin and
+  size. A spanning window no longer qualifies merely because it contains a
+  display.
+- Window-server collection excludes the current process ID, preserving the
+  different-application scope even if this app becomes frontmost.
+
+### RED/GREEN evidence
+
+Added these real, pure classification checks before changing production code:
+
+- `fullscreenClassificationAllowsSmallFrameTolerance`
+- `fullscreenClassificationRejectsSpanningWindow`
+
+RED command:
+
+```text
+SDKROOT=/Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk \
+CLANG_MODULE_CACHE_PATH=/private/tmp/desktop-cat-clang-cache \
+SWIFTPM_MODULECACHE_OVERRIDE=/private/tmp/desktop-cat-swiftpm-cache \
+swift run --disable-sandbox \
+  --sdk /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk \
+  DesktopCatChecks --filter fullscreenClassification
+```
+
+Output (exit 1):
+
+```text
+PASS fullscreenClassificationRecognizesScreenCoveringWindow
+FAIL fullscreenClassificationAllowsSmallFrameTolerance: expected a window within frame tolerance to be fullscreen
+FAIL fullscreenClassificationRejectsSpanningWindow: expected a spanning window not to be classified as fullscreen
+PASS fullscreenClassificationIgnoresNonCoveringOrNonContentWindows
+PASS fullscreenClassificationHidesWhenDataIsUnavailable
+SUMMARY 3 passed, 2 failed
+```
+
+After adding the active-space observer, one-point frame matcher, and
+self-process exclusion, the same focused command produced (exit 0):
+
+```text
+PASS fullscreenClassificationRecognizesScreenCoveringWindow
+PASS fullscreenClassificationAllowsSmallFrameTolerance
+PASS fullscreenClassificationRejectsSpanningWindow
+PASS fullscreenClassificationIgnoresNonCoveringOrNonContentWindows
+PASS fullscreenClassificationHidesWhenDataIsUnavailable
+SUMMARY 5 passed, 0 failed
+```
+
+### Full verification
+
+Full runner command:
+
+```text
+SDKROOT=/Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk \
+CLANG_MODULE_CACHE_PATH=/private/tmp/desktop-cat-clang-cache \
+SWIFTPM_MODULECACHE_OVERRIDE=/private/tmp/desktop-cat-swiftpm-cache \
+swift run --disable-sandbox \
+  --sdk /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk \
+  DesktopCatChecks
+```
+
+Output: exit 0, `SUMMARY 23 passed, 0 failed`.
+
+Production build command:
+
+```text
+SDKROOT=/Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk \
+CLANG_MODULE_CACHE_PATH=/private/tmp/desktop-cat-clang-cache \
+SWIFTPM_MODULECACHE_OVERRIDE=/private/tmp/desktop-cat-swiftpm-cache \
+swift build --disable-sandbox \
+  --sdk /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk
+```
+
+Output: exit 0; `Build complete! (1.82s)`.
+
+### Fix-round self-review
+
+The pure checks reject a window that encloses a display but has a materially
+different frame, and accept a frame differing only by half a point. The
+window-server query remains scoped to the frontmost PID, now explicitly rejects
+the current PID, and still returns `nil` (which hides the cat) when collection
+data cannot be read. `activeSpaceDidChangeNotification` is observed alongside
+application activation; both callbacks refresh on the main actor.
